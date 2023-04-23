@@ -1,0 +1,185 @@
+item_id|date|category|title|content|link|photo_link
+big-data_20230420_1|2023-04-20|AI|微軟傳已投入開發自有AI專用晶片 |" 《The Information》報導，積極投入AI策略的微軟，數年前已著手開發一顆專門為AI模型訓練及執行聊天機器人而設計的強大晶片，代號為Athena。
+報導引述2名消息人士指出，微軟早在2019年就已啟動Athena專案的開發，希望這顆軟、硬整合設計的晶片能提供比市售晶片更大的運算效能。微軟2019年首次投資AI新創公司OpenAI 10億美元。消息人士也說，已有部分微軟和OpenAI員工已經拿到Athena的工程樣品。
+報導指出，目前有300人投入Athena專案開發。Athena專案規畫數代設計，第一代可能以台積電5奈米製程生產。
+微軟最近投資OpenAI數十億美元，取得其GPT模型及ChatGPT技術。微軟最終目的是希望將AI整合到它所有產品服務中，包括Office、Windows、甚至整個Azure雲端服務。而一旦以高效能晶片作為Azure雲端的運行底層，將需天價硬體成本。
+專家分析，現有AI系統使用的GPU中，Nvidia的A100及H100占了90% 的市場，兩顆售價分別在每顆1萬及4萬美元。透過自行研發晶片，微軟可能希望藉此降低資料中心成本，提升開發主導性及開發時程，或至少取得和Nvidia議價的籌碼。
+微軟和Nvidia皆未對此回應。
+這並不是微軟第一次投入AI硬體開發。微軟2017年也透過Brainwave專案，開發在雲端及邊緣執行即時AI推論的深度學習平臺。
+其他的雲端大廠，包括Google、Amazon Web Services、騰訊、阿里巴巴等也都投入自製AI晶片。
+"|https://www.ithome.com.tw//news/156484|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/0420-microsoft-wei_ruan_guan_fang_tu_-960.jpg?itok=-2Bn3fhh
+big-data_20230420_2|2023-04-20|AI|Adobe Lightroom新增以AI消除噪點、強化細節修整的功能 |" 本周在NAB產品大會上，Adobe宣布多項整合AI，可消除相片噪點、調整圖片細節的新Lightroom功能。
+Adobe相片編輯軟體Lightroom產品線，包括提供給一般消費者及專業攝影師的Lightroom、Lightroom Classic、以及行動版Lightroom Mobile、網頁版Lightroom Web，都加入了以機器學習模型Adobe Sensei為基礎的AI功能。例如新版加入人像適應性預設功能，方便用戶從預設資料庫選擇，以微調人像的相片明暗細節，包括天空顏色、牙齒、皮膚顏色到人物鬍鬚、髮絲的層次變化。另外，AI自動產生的遮罩功能去年首度用於Adobe的人像處理 ，現在可進一步處理衣服及毛髮（如鬍鬚）的編輯。AI遮罩功能之前只在桌機版和行動版支援，現在Web版也可以使用。
+
+
+還有降噪及曲線功能。降噪功能可去除昏暗燈光下拍攝的人像噪點，提高影像品質卻不喪失細節，對高感光度的檔案尤其有效。曲線調整（tone curve）功能則允許修飾相片特定部位的顏色和色調，目前支援RAW檔案，之後會擴大到其他檔案類型。此外，用戶也可以將彩色影片轉成黑白影片。
+此外，Lightroom目前以技術預覽版支援內容憑證（content credential），可允許用戶蒐集紀錄圖片編輯的活動及metadata屬性資訊，以證明影像的真實性，而非AI創作。這些憑證為可攜式證據，不論傳到哪個平臺都能用以證實內容真實性。
+Adobe本月稍早還宣布Creative Cloud加入生成性AI模型Adobe Firefly，可生成圖像和文字，以及影像編輯軟體Adobe Premiere Pro中加入文字化編輯功能及AI色彩與色調自動調配，前者可將影片聲明自動轉錄成文字，方便用戶更快搜尋到需要的段落加以編輯，後者則可比對不同影像來源的色調，不需調色檔，支援iPhone HLG及常見log格式如SonyS-Lo，本功能可減少不同來源影像的色差，方便跨媒體製作。
+"|https://www.ithome.com.tw//news/156482|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/0420-adobe_photoshop_lightroom-new_adobe_sensei_ai-powered_features-960.jpg?itok=2PtRKTGq
+big-data_20230420_3|2023-04-20|AI|Snapchat開放聊天機器人供全球用戶免費體驗，推出AI生成的濾鏡 |" Snapchat於今年2月已經宣布與OpenAI合作推出名為「我的 AI（My AI）」的智慧助理。當時只提供Snapchat+的付費訂閱用戶，每個月$3.99美金，現在全世界的人都能免費使用。
+此聊天機器人可以幫助用戶處理各種事務，從管理日常任務、提醒用戶重要活動，到提供有關天氣、新聞等方面的即時訊息。用戶還可以通過與聊天機器人互動來了解最新的趨勢、娛樂資訊等。Snapchat同時強調了用戶隱私保護的重要性，將對所有與聊天機器人的互動進行加密處理。
+此外，用戶可以為這個機器人取名字並客製化Bitmoji頭像，很像是為自己打造一個虛擬夥伴，當「他或她」參與群組對話時，名字旁邊會有閃光以幫助區分與真實人類的差異。
+雖然My AI不再僅限於Snapchat+，但付費訂閱者將獲得一個有趣的額外功能， Snapchat打算為Snapchat+訂閱者在My AI做出以AI生成圖像的方式回應。例如，向My AI發送一個南瓜的Snap可能會得到一張南瓜湯的圖片回應。
+Snapchat也在Snap Partner Summit推出了由AI生成的AR（Augmented Reality）濾鏡，這個濾鏡名為「宇宙濾鏡（Cosmic Lens）」。其濾鏡可以根據用戶的喜好和當下環境製造出獨特的視覺效果，像是將我們動畫化後置身於科幻的場景。
+
+Snapchat轉向由AI增強AR濾鏡並不令人意外，畢竟先前已經發布My AI聊天機器人加入了AI狂潮。值得注意的是，Snapchat 並非唯一使用AI改進其AR產品的社交媒體平台，因為TikTok最近也使用AI生成了Bold Glamour濾鏡，這個濾鏡能讓使用者的臉部更立體、眉毛對稱。即使使用者用手擋在自己面前，畫面也幾乎不會變形。根據TechCrunch報導，Snapchat指出，Snapchat更新了推薦濾鏡的演算法，也將會根據用戶拍攝的照片或影片找到適合的濾鏡推薦給用戶，例如從影像內的天氣、拍照時間等判斷。路透社指出在訪問Snapchat執行長（CEO）Evan Spiegel時，他說也可以要My AI推薦濾鏡，幫助用戶探索更多功能，同時能用地圖功能推薦現實生活的參觀景點。
+
+Snapchat也透露，目前超過30萬的AR創作者和開發者已經創建了超過300萬個濾鏡。
+"|https://www.ithome.com.tw//news/156481|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/2023-04-19_172316.png?itok=0eXxOi4n
+big-data_20230419_4|2023-04-19|AI|馬斯克要發展AI聊天機器人TruthGPT |" 推特及特斯拉執行長馬斯克（Elon Musk）本周表示要開發不說謊，更安全的AI聊天機器人TruthGPT。
+馬斯克是在接受《福斯新聞》（Fox News）訪問，和這個節目主持人Tucker Carlson對談時透露其計畫。
+一如以往，馬斯克提及進階AI未受控制的發展會危害人類的觀點。當主持人談到，現有主要AI聊天機器人包括OpenAI的ChatGPT、或是大公司如微軟、Google開發的聊天機器人，在無限制下發展會危害人類。而有政治力量介入的AI開發則可能會促發假訊息充斥、「控制美國人心智」、傷害民主。
+馬斯克則回應這些AI模型是由左翼專家開發，他們訓練的聊天機器人會說謊。因此他說他準備開發「TruthGPT」，或極力追求真相（maximum truth-seeking）的AI。他認為，確保安全的最好方法是打造一個想追求宇宙真相的AI，這種AI不會想消滅人類，因為人類是宇宙很有趣的一部分。
+兩周前，一份有馬斯克聯署的公開信也提及進階AI對人類的威脅。該公開信要求各主要AI實驗室暫停開發比ChatGPT-4進階的AI系統6個月。不過馬斯克同時間投入開發AI又動作頻頻，繼購入訓練生成性AI的數千顆GPU後，本周《華爾街日報》報導馬斯克已經悄悄成立了一間X.AI公司，目的可能在開發生成性AI。
+"|https://www.ithome.com.tw//news/156471|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/0419-elon_musk_by_spacex-960.jpg?itok=vZ2mu_lq
+big-data_20230419_5|2023-04-19|AI|Reddit API要對開發AI模型獲利的用戶收費 |" 有鑒於OpenAI或其他AI業者利用Reddit上的程式碼等資源，開源碼程式碼代管平臺Reddit本周宣布更新其服務條款，將開始對特定藉訓練AI模型獲利的用戶收取費用。
+Reddit宣布更新開發人員工具及服務，包括開發人員平臺、資料API、Reddit Embeds及Ads API的條款，以及推出新的平臺仲裁者工具。
+Reddit於2016年首次推出Reddit Data API以及其他工具，目的是希望提供開源資源協助開發人員打造應用程式。Data API也允許第三方單位，包括學術研究單位及社群分析（social listening）工具等存取Reddit上的資料。
+Reddit指出，為確保開發人員有必要的工具可安全使用Reddit、保護用戶安全與隱私，並且遵守各國法規，Reddit對Data API做了些更動。首先，對需要使用更多功能、提高使用量及更廣泛使用權的第三方單位，Reddit提出新的付費方案。另一方面，透過開發平臺進行合理及適當使用（即研究、學術及個人使用等情境）的開發人員，則仍然可免費使用Data API。
+Reddit強調，18年來，作為最大線上人與人對話的資料平臺，Reddit對社群有保護這些內容的義務。這家平臺在官方文字中並未明說，但《紐約時報》引述Reddit執行長Steve Huffman說，Reddit平臺上的資料很寶貴，但爬取Reddit資料、產出價值卻不回饋給平臺用戶的行為令他們不以為然，現在有必要收緊管制，他們相信這才公平。
+Reddit並未公布價格方案細節，但Reddit正在準備股票公開發行，營收顯然是未來營運的考量要件。
+Reddit同時宣布正在陸續打造Reddit仲裁工具，供iOS及Android應用開發專案的管理員使用，包括紀錄（log）、規則管理、內容管理、以及工作流程工具。Reddit說未來幾個月內會陸續上線並公告。
+除了Reddit，最大社群平臺推特也在二月間宣布關閉API免費存取，改推月費100美元的服務，理由是解決推特上充斥垃圾訊息機器人的問題。新規定原本令許多機器人營運者哀嚎遍野，所幸推特很快就對輕量唯寫API放寬為免費存取。
+許多內容平臺或資料庫已經對OpenAI、Midjourney、Stability AI等AI模型廠商使用免費或開源的圖片、程式碼、文字等內容，來訓練其AI產品感到不滿。圖庫業者Getty Images今年初即對Stability AI提出侵權告訴。
+"|https://www.ithome.com.tw//news/156469|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/0419-reddit-960.jpg?itok=fiEtPBbF
+big-data_20230418_6|2023-04-18|AI|以AI生成的黑白照片獲索尼世界攝影大賽首獎，創作者拒絕領獎 |" 由德國藝術家Boris Eldagsen所創作的黑白照片《PSEUDOMNESIA | The Electrician》獲得了2023年索尼世界攝影獎（Sony World Photography Awards，SWPA）公開組創意類別的首獎，不過，獲獎的Eldagsen隨後坦承該作品是由AI生成而拒絕領獎，雙方不歡而散。
+索尼世界攝影獎是由英國世界攝影組織（World Photography Organization）所舉辦的年度攝影競賽，分為專業組、公開組、青少年組及學生組，其中，專業組與公開組都有十個類別，Eldagsen參賽的是創意（Creative）類別，其得獎《PSEUDOMNESIA | The Electrician》作品以黑白照片呈現了兩個不同世代的女性，評審認為該作品令人回想起1940年代盛行的全家福照片。
+然而，Eldagsen在得知自己獲獎之後，發表了一篇聲明，指出這是首張在國際知名攝影比賽中得獎的AI圖片，AI圖片與照片不應該在這樣的獎項中相互競爭，因為它們是不同的東西，AI並不是照片，因此，他不會領獎。
+Eldagsen還說，他以AI圖片參賽的主要原因，是想確認相關的競賽是否已準備好迎接AI時代的到來，結果顯然沒有，攝影社群應該要公開討論AI圖片的定位。
+事實上，Eldagsen描述自己已經從一個單純的攝影師轉移到探索AI生成的可能性，他期望藉由AI作品的參賽來喚起外界對此事的重視，並希望英國世界攝影組織與SWPA能夠舉行公開的討論，只是他也諷刺評審團可能看不出該作品是來自AI。
+另一方面，英國世界攝影組織向《Vice》透露，其實評審團知道《PSEUDOMNESIA | The Electrician》是Eldagsen與AI系統共同創作的，頒獎給該作品的原因之一是創作類別原本就歡迎各種實驗性的照片製作方法。
+總之，由於Eldagsen拒絕領獎，使得SWPA決定撤下得獎照片，公開組的創意類別獎項也變成從缺，只剩下其它的入圍名單及作品。
+美國科羅拉多州博覽會（Colorado State Fair）去年也把美術比賽的冠軍頒給以AI創作的作品，當時即造成極大的爭議，作者Jason Allen認為自己並未違反比賽規則，而主辦單位最終仍決定維持原來的結果。
+"|https://www.ithome.com.tw//news/156454|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/0418-ai_generated_image_by_boris_eldagsen-960.jpg?itok=bHRD7BIZ
+big-data_20230417_7|2023-04-17|AI|外傳三星正考慮以Bing取代Google作為裝置預設搜尋引擎 |" 《紐約時報》（New York Times）本周引述消息來源報導，三星正在考慮要以微軟的Bing來取代Google，作為三星裝置的預設搜尋引擎，而Google除了對此感到驚慌之外，也已計畫要在下個月對外揭露添增AI能力的新搜尋引擎專案Magi。
+微軟於今年2月發表了採用最新OpenAI GPT-4模型的Bing搜尋引擎，以AI來改善Bing的搜尋與聊天能力。
+根據報導，Google是在今年3月得知三星正在考慮要以Bing來取代Google，估計Google與三星的搜尋引擎年約價值30億美元。該報亦引用Google內部文件，指出Google準備在下個月更新搜尋引擎，利用AI技術提供更多個人化的功能，此一專案的內部代號為Magi，有160名人力。
+"|https://www.ithome.com.tw//news/156439|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/0417-samsung_galaxy_photo_by_daniel_romero_on_unsplash-960.jpg?itok=MyAscT8r
+big-data_20230417_8|2023-04-17|AI|傳馬斯克已成立開發ChatGPT競爭服務的AI公司 |" 媒體報導，馬斯克已成立了一間專門開發AI技術的公司名為X.AI。
+《華爾街日報》首先報導，X.AI是3月於美國內華達州成立，馬斯克為這間公司的總監，祕書則由馬斯克家族辦公室主任Jared Birchal擔任。《金融時報》也報導這位科技富豪成立了AI新創公司。根據《The Verge》取得的官方文件，X.AI Corp成立時間是在3月9日。
+這是繼3月《The Information》報導後，關於馬斯克AI大夢的報導。當時媒體披露，馬斯克找來前DeepMind科學家Igor Babuschkin籌建AI研究實驗室，以開發和ChatGPT競爭的AI技術。至於Bubuschkin是否加入馬斯克團隊不得而知。根據其LinkedIn資料Bubuschkin去年4月由OpenAI重回DeepMind，但已在今年2月離職，不過未顯示現職所在。
+此外《Business Insiders》2周前報導，馬斯克買進了數千顆GPU，目的在執行生成性AI產品。馬斯克並未說明買這些GPU的目的，只說這年頭大家都買GPU。
+這個X.AI的公司名稱也符合馬斯克傳聞中的計畫。馬斯克希望開發提供包括購物、通訊、社群等功能於一的X應用程式，且成立X公司收購推特（Twitter）。媒體上周引述一份文件報導，馬斯克旗下的推特作為法人組織已經不存在，因為已併入一家名為X的公司（X Corp）。
+有趣的是，馬斯克2周前才簽署了一份呼籲AI實驗室暫停開發比OpenAI ChatGPT 4.0更先進AI模型的公開信，以避免AI危害人類為由，要求AI實驗室AI模型暫停發展6個月，以規畫管理機制及法令。
+"|https://www.ithome.com.tw//news/156432|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/0417-elon_musk-photo_by_tesla-2023_investor_day-960.jpg?itok=XHV4HauE
+big-data_20230414_9|2023-04-14|AI|Google訓練機器人在自家辦公室分類垃圾 |" 增強學習技術的發展，使得機器人的能力隨之提升，除了抓取等基本操作，Google還要讓機器人具備能夠實際處理日常任務的能力，而Google在這2年於自家辦公大樓部署23臺機器人，專門在垃圾站巡邏，並執行垃圾分類和回收的工作，經統計一年約可減少一半的垃圾重量。
+Google發展能夠在自家辦公大樓中巡邏，並且尋找垃圾站的機器人，機器人的任務是能夠重新整理垃圾站的垃圾，將可回收物品從其他桶中移動到可回收桶，並將所有可分解的物品，像是紙容器和紙杯丟入可分解桶，至於其他的東西則放到垃圾桶。
+研究人員提到，分類垃圾對機器人來說並不容易，光是要撿起垃圾桶中的物品，就是一個很大的深度學習挑戰，而且機器人還要能夠辨識物體，將物體放進合適的桶中更是不容易。研究人員使用真實世界資料，進行深度增強學習，並且透過將模擬訓練和實際操作相結合，以加速學習過程，另外，機器人也使用額外的感測資訊，掌握物體的形狀和大小，提高在不同場景下的泛化能力。
+訓練垃圾分類機器人有多個分類垃圾經驗獲取管道，一開始由研究人員制定一組簡單的策略，雖然機器人以此策略分類垃圾的成功率很低，但是可以提供一些初始經驗，第二個經驗學習管道則是sim-to-real模擬訓練框架，透過模擬提供機器人更多初始垃圾分類策略，再來研究人員則要機器人站在教室中，透過設定具代表性的垃圾站環境，要機器人不斷地進行垃圾分類練習，最後研究人員才將這些機器人，部署到辦公大樓中，在真實的環境中執行垃圾分類，學習最實際的分類經驗。
+雖然在實際辦公大樓垃圾桶的訓練，可以擁有最真實的體驗，但是辦公室中有些時候會有很多垃圾，有些時候卻又很少，因此機器人多數的分類經驗，還是在垃圾分類教室中獲得。機器人在分類教室總共收集54萬次的分類試驗，在實際部署中則收集到3.25萬次。
+
+透過在教室中進行受控的比較實驗，最終機器人能以84％的準確度分類垃圾，而且透過分析2021年到2022年的統計資料，Google表示他們的機器人分類系統，能夠有效減少垃圾重量40％到50％。
+"|https://www.ithome.com.tw//news/156422|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/fireshot_capture_1746_-_robotic_deep_rl_at_scale_sorting_waste_and_recyclables_with_a_fleet_-_ai.googleblog.com_.png?itok=39CLzTLN
+big-data_20230414_10|2023-04-14|AI|Meta開源可以把素描變成動畫的AI專案Animated Drawings |" Meta的基礎AI研究（Fundamental AI Research，FAIR）團隊本周發表了新的AI開源專案Animated Drawings，能夠將兒童所創作的人物素描變成動畫，該專案包含了演算法及近18萬張具備註解的素描，可望協助創作者與開發者打造相關經驗與產品。
+為了蒐集大量的素描來訓練AI模型，FAIR團隊在2021年時便建立了Animated Drawings Demo，這是個可透過網頁存取的示範服務，讓創作者可上傳他們的素描，檢視與校正模型預測，繼之收到基於該素描角色而衍生的動畫。
+有趣的是，原本該團隊的目標只想蒐集1萬張素描圖片，不料該示範服務引起熱烈的迴響，在短短的幾個月內就收到了超過160萬張素描，最終全球總計有320萬人造訪過該站，上傳到該服務的素描數量多達670萬張。
+原因之一可能是Animated Drawings Demo的介面很簡單，使用者上傳素描作品後，可選擇要執行動畫的角色，確認角色的關節位置，就能建立動畫了，不到一分鐘就能將原本處於畫紙上的靜態角色變成活蹦亂跳的動畫人物。
+
+
+此外，Meta也發現使用者對Animated Drawings的興趣超乎想像，他們其實只想蒐集來自兒童的素描，卻發現使用者上傳了五花八門的圖案，從企業商標、填充玩具、寵物、人偶，到各種想要它們變成動態的內容，且就算該示範服務指定只要人物的素描，但使用者上傳了鳥、魚與各種動物，也熱情地提供了各式各樣的意見，例如想要透明的背景，希望可支援不同的骨架，要有表情，可以多個角色一起互動，以及音效、情境與文字功能等。
+面對襲來的大量建議，FAIR決定直接將Animated Drawings開源。Meta表示，未來除了內部專案會導入Animated Drawings之外，也期望透過開源以讓全球創作者與開發人員共同建立將素描變成動畫的更多樣化的體驗。
+雖然全球使用者上傳的素描數量多達670萬張，但Meta進行了多次的過濾行動，包括僅選擇那些同意與研究團隊分享的素描，再加上隱私與安全考量，以及剔除不符合該專案要求的圖片等等，最後收錄在資料集中的素描則接近18萬張。
+"|https://www.ithome.com.tw//news/156416|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/0414-meta_facebook_research-animateddrawings-960.jpg?itok=OJ34Xi_G
+cloud_20230414_1|2023-04-14|Cloud|Pulumi整合大型語言模型，自動化雲端基礎設施即程式碼操作 |" 熱門基礎設施即程式碼工具新創Pulumi，運用生成式人工智慧和大型語言模型，推出新工具Pulumi Insights，使得用戶在基礎設施即程式碼的處理上，獲得人工智慧的協助，更容易地執行進階搜尋、分析等工作。所有Pulumi雲端用戶都可以使用Pulumi Insights。
+Pulumi Insights中的Pulumi AI，是一個以大型語言模型為基礎，針對雲端基礎設施創建的人工智慧助理，官方提到，Pulumi AI可減少探索、學習和使用新雲端基礎設施API的時間。用戶可以直接使用自然語言，要求Pulumi AI以指定的程式語言達成特定雲端基礎設施操作，包括在雲端基礎設施添加新功能、提高安全性和效能，甚至是修復錯誤等任務。
+藉由使用Pulumi AI，用戶不需要了解特定API，就可以利用CLI工具創建複雜的雲端基礎設施，並且在雲端控制臺查看已部署的內容。
+Pulumi Insights能夠智慧地在用戶所使用的雲端平臺搜尋資源，官方提到，企業通常不會僅使用單一雲端平臺或是雲端帳戶，部分團隊甚至擁有數十個雲和數百個帳戶。要搜尋這些雲端資源和帳戶下的基礎設施非常困難，而Pulumi Insights的資源搜尋功能，可以探索用戶的所有資源，並且按堆疊、專案和各種維度過濾資源。
+用戶可以查詢像是所有AWS VPC，或是所有AWS和Azure VPC中，具有生產標籤的資源，同時也能夠存取雲端資源統計資料，像是按雲端供應商、資源類型或是部門分類的資料。
+Pulumi Insights的資料匯出工具，則能夠將Pulumi Supergraph中的資料，匯出供Excel、Tableau、Looker、PowerBI等商業智慧工具使用，以進行更深入的分析，或是以Snowflake、Redshift與Databricks等資料倉儲視覺化資源資料，創建有關成本、法遵和其他操作的報告。
+"|https://www.ithome.com.tw//news/156423|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/fireshot_capture_1749_-_pulumi_insights_intelligence_for_cloud_infrastructure_-_pulumi_blog_-_www.pulumi.com_.png?itok=zWsiQ-ox
+cloud_20230414_2|2023-04-14|Cloud|Visual Studio 17.6將加入建置加速平臺Incredibuild 10 |" 微軟宣布將在Visual Studio 17.6整合建置加速平臺Incredibuild 10，以加速大型專案建置速度。由於Incredibuild具有建置快取技術，可以供開發人員快取建置輸出，方便所有團隊成員重複使用，藉由擴大增量建置帶來的優勢，使大型專案建置更有效率。
+Incredibuild是一款軟體建置加速工具，可以讓開發者更快地編譯、測試和執行應用程式，藉由運用分散式運算技術，Incredibuild可以利用網路中其他電腦的資源，加速開發過程中包括編譯、測試和執行時等各項任務。Incredibuild對於遊戲與嵌入式應用開發特別有用，因為這些應用通常具有龐大的軟體專案，編譯和測試時間都較長。
+Incredibuild作為第三方工具，支援多種編譯器和開發環境，包括Visual Studio、GCC和CMake等，而微軟現在要讓開發者在Visual Studio 17.6的安裝程式，將可以直接選擇安裝Incredibuild。微軟提到，Incredibuild系統會將開發流程分解為可獨立執行的小任務，而透過Incredibuild 10新加入的建置快取（Build Cache）技術，可以重用整個開發團隊先前執行的任務輸出，以節省建置時間和資源。
+也就是說，建置快取得以擴大增量建置的範疇，Incredibuild系統僅會就開發者的變更進行建置，而將開發團隊其他不相關的部分合併到更改時，便可以僅使用快取，且當開發者切換回原始分支時，僅暫時於其他不同分支上工作，也不會發生大型建置。
+針對輸出不在快取的任務，Incredibuild Grid便會將這些任務分配到運算核心池中，分配給任務需要的運算容量。網格中的機器不需要安裝編譯器或是事先複製程式碼，Incredibuild Grid能夠處理所有的工作，而且當這些工作完成並被快取後，相同的工作之後就不必再次執行，因此能夠大幅減少整個團隊的建置時間。
+建置快取除了可以減少團隊建置的時間外，對於在家工作的開發者也有優點，因為家庭網路通常上傳頻寬有限，因此在家工作通常會影響建置速度，而建置快取可讓建置工作轉為仰賴下載頻寬，因此在建置工作將可獲得更好的速度和效能，重複使用儲存在本地電腦的建置資料，能夠在不影響頻寬的情況下，明顯縮減建置時間。
+"|https://www.ithome.com.tw//news/156418|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/fireshot_capture_1743_-_even_faster_builds_with_incredibuild_10_and_visual_studio_17.6_previ_-_devblogs.microsoft.com_.png?itok=wGceQiDd
+cloud_20230414_3|2023-04-14|Cloud|Amazon推出雲端AI模型平臺Bedrock、大型語言模型Titan |" Amazon也加入AI LLM模型競賽。Amazon Web Services（AWS）昨（13）日宣布可供用戶選用不同AI基礎模型的雲端服務Amazon Bedrock，和該公司第一個大型語言模型（Large Language Model，LLM）Titan。
+Bedrock讓客戶可透過API使用AI21 Labs、Anthropic、Stability AI及Amazon自有基礎模型（foundation model，FM），以便開發及部署生成式AI應用。Bedrock服務讓用戶在AWS代管雲端平臺上，使用可生成文字或圖形的基礎模型。AWS指出，客戶可視其應用選擇適合的基礎模型，以其自有資料訓練出獨有的模型，並可用AWS工具整合到他們的應用程式中。AWS說，這項服務也可整合其他AWS工具和功能，像是Amazon SageMaker的Experiments功能追蹤、分析、測試模型參數、程式碼版本及訓練資料集，或是以Pipelines功能來管理大規模基礎模型。
+Bedrock目前提供的模型中，AI21 Labs的多語言LLM Jurassic-2可生成西語、法語、德語、葡語、義語、荷語文字。Anthropic的Claude LLM可執行多種對話及文字處理作業，號稱是誠實及負責任的AI系統。Stability AI則提供從文字生成圖片的基礎模型套件，包括Stable Diffusion，可生成逼真、高品質的圖片、藝術、Logo和設計。
+AWS今天也公布了第一個自有基礎LLM名為Titan FM。Titan FM包含兩個新LLM，一是生成式LLM，適用於摘要總結、生成文字（如部落格貼文）、分類和開放式QA、搜尋資訊等任務。二是嵌入LLM，可將文字（如字、詞或文字單位）輸入轉成數值形式（稱為嵌入embedding）來表徵文字語意，適合個人化服務、推薦及搜尋等。AWS表示，Amazon.com平臺上的產品搜尋功能也用了類似的嵌入模型，幫使用者尋找相關商品。Titan FM還支援負責任的AI原則，能偵測及移除資料中心有害內容、拒絕用戶輸入的低俗或不當內容，並且過濾掉模型產出的不良內容（如仇恨言論、色情和暴力內容）。
+AWS強調Bedrock最重要的特色是允許客製化模型。用戶只要將Bedrock指向Amazon S3幾個標註過的範例，它就能微調出特定任務適用的模型，而無需再標註大量資料（大約20個範例就足夠）。AWS舉例，零售服飾業者的內容行銷業者要為新的手提包設計行銷活動，只要給Bedrock該公司做過的行銷活動中效果最好的標題，以及相關新品描述，它就能自動生成社群平臺行銷內容、展示廣告，以及新手提包的網頁行銷資料。訓練模型過程中不需使用客戶個資，所有資料都經過加密，也不會離開客戶的虛擬私有雲（Virtual Private Cloud，VPC），確保所有用戶資料的隱私和安全。
+目前Bedrock以限定預覽版形式上線，早期試用客戶包括線上檔案編輯器軟體商Coda在其環境訓練AI模型，ISV如C3 AI及Pega也以Bedrock使用基礎模型。Amazon Titan FM也有一些客戶試用過，AWS表示接下來幾個月內將推廣給更多企業測試。AWS尚未公布Bedrock的價格。
+Bedrock是AWS生成式AI方案三項元素之一。AWS今天同時宣布另二項元素的消息，包括程式撰寫輔助工具CodeWhisper正式上線，個人版免費提供，專業版則為每人每月19美元。
+此外，AWS也正式推出2個生成式AI適用的執行個體，包括AWS Inferentia2晶片的Amazon EC2 Inf2 instances，以及使用更高階Trainium機器學習加速晶片的Amazon EC2 Trn1n執行個體，分別提供800 Gbps及1600 Gbps網路頻寬。
+"|https://www.ithome.com.tw//news/156411|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/0414-generative_ai_on_aws-960.jpg?itok=gOQUrot9
+cloud_20230412_4|2023-04-12|Cloud|ASP.NET Core鎖定雲端應用程式提供原生AOT支援，程式啟動更快記憶體消耗更少 |" 微軟於.NET 8第三預覽版中，在ASP.NET Core加入原生AOT（Ahead-Of-Time）的支援，供開發者將程式碼編譯成為原生碼，生成自封式（Self-Contained）ASP.NET Core應用程式。官方提到，這項新功能的發展初期，會先專注於支援雲端原生API應用程式。
+ASP.NET Core是一個以.NET架構為基礎的網頁應用程式跨平臺開發框架，由於ASP.NET Core相依於.NET，因此原本ASP.NET Core就可以用到AOT編譯，但是支援重點主要還是在提升效能和可擴展性上，整體支援並不完整。
+而.NET 8第三預覽版在ASP.NET Core加入原生AOT，使得ASP.NET Core能夠獲得更完整的AOT優勢。使用原生AOT編譯的應用程式，可減少磁碟空間使用，原生AOT應用程式會生成一個可執行檔，其中包含應用程式和所需的外部相依項目程式碼子集，而這個優點會讓容器映像檔更小，進而縮短部署的時間。
+由於AOT程式碼不再需要JIT編譯，也就可以縮短程式啟動時間，應用程式可以更快處理請求，容器調度效能將獲得改善，不同版本的應用程式轉換更順暢。原生AOT程式碼還能夠減少記憶體需求，讓應用程式部署密度提高，並且改善可擴展性。
+針對需要部署多個執行個體的工作負載，像是雲端基礎設施和超大規模服務，ASP.NET Core原生AOT的支援將帶來更為明顯的好處。經官方測試，將應用程式以原生AOT編譯，啟動時間可減少達80％，應用程式的大小也可減少了87％。
+不過，並非所有ASP.NET Core的功能都與原生AOT相容，部分開發者常用的函式庫也可能不支援原生AOT。ASP.NET Core的原生AOT限制主要在反射（Reflection）和動態程式碼生成相關部分，雖然原生AOT支援型別資訊的反射，但執行時可能會發生一些問題，因為AOT編譯中的樹型剪裁，無法靜態確定特定型別的成員是否透過反射存取，因此可能使這些成員被移除，在執行時發生問題，開發者需要特別標記動態存取的成員，才能避免成員被移除。
+微軟提醒，程式碼仰賴反射執行時程式碼生成並非總是很明顯，因此開發者應該要仔細檢查程式碼，避免意外地將原生AOT用於不相容之處。
+除此之外，這個預覽版還加入了一個值得注意的功能，便是Blazor元件的伺服器端渲染（Server-Side Rendering，SSR），微軟讓開發者可以使用Blazor元件建置伺服器端渲染的使用者介面，以提升客戶端的互動性。ASP.NET Core原本就已經支援MVC和Razor Pages進行伺服器端渲染，但是這些框架，缺乏可重用的網頁使用者介面元件，而Blazor剛好可以彌補這個不足。
+伺服器端預覽是指讓伺服器在收到請求時生成HTML，優點是載入速度快，因為使用者介面的渲染工作在伺服器上已經完成，客戶端便不需要下載大量的JavaScript套件。而微軟在Blazor元件加入伺服器端渲染，也就進一步使Blazor能夠同時滿足客戶端和伺服器端等，所有網頁使用者介面的需求。這項功能仍在早期預覽階段，在功能上還有許多限制。
+"|https://www.ithome.com.tw//news/156376|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/vs-api-project-template-options.png?itok=tU-HN83p
+cloud_20230412_5|2023-04-12|Cloud|Wasmer發表WCGI讓開發者將CGI程式編譯成WebAssembly |" 開源WebAssembly Runtime同名開發商Wasmer，發表了可以結合WebAssembly以及CGI（Common Gateway Interface）程式的技術WCGI。藉由使用WCGI，開發者可以將CGI程式編譯成WebAssembly，使CGI程式更適合在無伺服器環境運作，並且獲得WebAssembly帶來的各種好處。
+CGI是一種網頁伺服器上用於執行應用程式的技術，當用戶透過網頁瀏覽器存取網站，並進行互動時，CGI程式可以將用戶的請求傳送給後端應用程式，並且將結果回傳給用戶瀏覽器。CGI程式可以用多種語言編寫，諸如PHP、Perl、Python和Ruby，這些程式通常用於處理表單提交、生成動態網頁內容等。
+在Wasmer嘗試發展無伺服器解決方案的過程，遭遇到要重新創造輪子，抑或是以現有技術為基礎開發的抉擇，經過評估後，他們認為，CGI設計理念是對每個HTTP請求執行一個獨立的程序，而這種機制剛好和無伺服器架構的目標相吻合，在無伺服器架構中，將更容易自動擴展或是調度資源。
+因此Wasmer開發了WCGI，使開發者可以將原有的CGI程式編譯成WebAssembly，而這樣的方式有許多的優點，首先開發者可以重用現有的CGI程式，將既有AssemblyScript、C、C++、Go、PHP、Python等程式，編譯為極具可移植性的WASI（WebAssembly System Interface）程式，在各種環境中運作。而且相較起HTTP堆疊和Docker容器，利用WCGI編譯成僅包含業務邏輯或是靜態資產的超小型套件，更為輕便。
+由於WebAssembly程式碼僅在沙盒中運作，因此WebAssembly程式執行上便具有高度安全性，而且WebAssembly是一種低階語言，因此也能夠大幅提高CGI程式的執行效能。透過將CGI應用程式編譯成WebAssembly，使其更能結合現代網頁技術，諸如WebWorkers、Service Workers，供開發者靈活地進行應用程式開發。
+"|https://www.ithome.com.tw//news/156366|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/fireshot_capture_1736_-_announcing_wcgi_webassembly_cgi_-_wasmer.io_.png?itok=N27NwhSW
+cloud_20230411_6|2023-04-11|Cloud|資安公司監測160萬人，竟有3.1%員工上傳機敏資料到ChatGPT |" ChatGPT爆紅，雖然吸引了許多企業開始嘗試導入工作職場，但也開始傳出企業機密資料外洩災情，一家資料安全服務商Cyberhaven日前統計旗下企業用戶共160萬名員工的使用行為，已有8.2%員工在職場使用ChatGPT，更有3.1%將不能外流的企業機敏資料，上傳到ChatGPT服務上，外洩的資料類型以企業機密文件最多，其次是顧客資料。
+Cyberhaven是一家提供企業級資料偵測與應變（DDR，Data Detection and Response ）的新創，產品可用來偵測企業內部各種資料流進流出的情況，能對企業禁止外流的資料類型發布警告，因此可以追蹤員工使用ChatGPT的資料上傳行為。
+這家公司統計了旗下不同產業的企業用戶，合計超過160萬名員工在2月26日到3月4日的資料上網情形，高達8.2%的員工從ChatGPT發布之後，在辦公室最少用過一次，其中更有3.1％的員工，曾經將企業機敏資料輸入到ChatGPT上。
+雖然，越來越多企業開始禁止或限制員工使用ChatGPT，例如Amazon就發信要求員工不能上傳機敏資料，或像三星在開放ChatGPT後發生半導體機密外流事件，也緊急限制使用。
+Cyberhaven也觀察越來越多企業直接在公司網路禁止ChatGPT服務，但是，機敏資料外洩災情仍持續上升，根據Cyberhaven平臺後續追蹤，在3月14日這一天，就偵測到每10萬名員工，發生了5,267起員工企圖將企業資料貼上ChatGPT的資料外流事件（包括遭攔截而沒有成功送出的次數），換句話說，每20名員工就會發生一次企業資料外流事件，其中有些是不可外流的機密資料。
+若以外洩的資料類型來看，在Cyberhaven進行統計的那一周內，平均每10萬名員工，會出現199次機密文件外流警告通報（約500人一次），名列通報類型的第一名，排名次高的通報事件是顧客資料外流（173起）通報，第三則是程式原始碼（159起）、法規定義的個資外流通報（102起）以及專案資料外流（57起）。這6種等於是員工最常外流到ChatGPT的企業機敏資料類型。
+ 
+"|https://www.ithome.com.tw//news/156293|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/chatgptzi_an_shi_jian_-960x420.png?itok=k3U292xm
+cloud_20230410_7|2023-04-10|Cloud|AWS Service Catalog讓用戶也能使用Terraform管控雲端資源 |" AWS用戶不只可以使用AWS CloudFormation，定義Service Catalog中的雲端資源，現在也可以使用開源基礎設施即程式碼（IaC）軟體工具Hashicorp Terraform，在Service Catalog配置雲端基礎設施，並且統一管理布建的資源。
+在Service Catalog上，企業可以創建和管理基礎設施即程式碼模板目錄，並控制可供使用的基礎設施即程式碼模板和版本，以及管理像是模板存取權限等各版本的配置，供工程師或是資料科學家以自助的方式，配置用於日常工作的雲端資源。Service Catalog模板包含了虛擬機器映像檔、伺服器、軟體和資料庫，甚至是完整的多層應用程式基礎架構所需的全部內容。
+Service Catalog終端用戶只能從有權存取的模板挑選需要的內容，方便企業集中管理以基礎設施即程式碼部署的資源。之前用戶可以使用AWS基礎設施即程式碼服務CloudFormation，布建和管理AWS與第三方的資源，而現在用戶還可以將現有Terraform配置，整合到Service Catalog中，讓Terraform中的內容也成為核准資源組合的一部分。
+官方提到，AWS Service Catalog同時支援CloudFormation和Terraform，可讓用戶選擇符合自家流程和專業知識的工具，也同時防止管理不一致，並且降低不合法遵要求的風險。
+目前在所有AWS地區的Service Catalog服務都已經支援Terraform配置，官方提到，使用Terraform與CloudFormation支付的價格相同，一樣是支付服務API呼叫的費用，另外，用戶還需要對Terraform參照引擎使用和創建的資源付費。
+"|https://www.ithome.com.tw//news/156329|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/service-catalog-terraform-product-details-1024x933.png?itok=Tth1cDD9
+cloud_20230410_8|2023-04-10|Cloud|Nvidia雲端新戰略 |" GTP-4發表不到一周，當全世界再次感受到生成式AI的新威力時，Nvidia趁勢發表了全新的商業模式，這一次不只賣斷AI軟硬體，更要打造雲端AI工廠，讓企業按月租用AI超級電腦
+"|https://www.ithome.com.tw//article/156287|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/1124-feng_mian_p1-open-dou_zi_-960x420_kao_bei_.jpg?itok=Ehjvcd5z
+cloud_20230407_9|2023-04-07|Cloud|【ChatGPT浪潮來襲，帶動平價客製化AI模型新需求】Nvidia大進擊，從AI軟硬體商變成雲端AI供應商 |" 「生成式AI不只展現強大能力，更讓企業產生重新思考產品和商業模式的急迫感，」Nvidia執行長黃仁勳在今年GTC大會開場演講時這樣強調，不分產業，企業都紛紛加快數位轉型，要變成軟體驅動的科技公司，「企業想要成為推動變革的一方，而不是被變革淘汰的另一方。」
+黃仁勳講這一席話的時候，新一代GPT-4正式發表剛滿一周，全世界再一次感受到生成式AI的新威力，Nvidia趁勢發表了全新的雲端營運模式。
+ChatGPT從去年底爆紅後，迅速累積破億人註冊使用。今年3月1日，OpenAI正式推出ChatGPT付費API後，這股浪潮更從個人使用，迅速蔓延到企業應用場域，各種ChatGPT相關應用紛紛出爐，兩大科技巨頭也大秀AI軍火。微軟展示了用GPT-4打造的下一代Office，從文書處理、試算表到簡報都能輔助，全新AI助手Microsoft 365 Copilot讓人驚艷。追趕的Google則祭出5,400億參數訓練的PaLM模型迎戰，同樣展示了下一代WorkSpace將如何結合生成式AI，以及可以自動生成App程式的Generative AI App Builder工具。微軟不甘示弱，祭出全新GitHub Copilot X反擊，將GPT-4更深度整合到IDE開發工具中，成為開發人員的萬能AI助手，從自動寫程式、除錯到優化配置樣樣都行。
+光是在3月，科技巨頭的AI競爭，就像拳擊場上你來我往的肉搏對打，讓企業主感受到一股非了解不可的焦慮感。尤其更強大、正確性更高、還能支援圖文輸入的GPT-4正式登場，讓企業主這股焦慮感更是火上添油。
+
+但是，企業要使用ChatGPT或是GPT-4，並非是件馬上就能決定的事，需要考量的細節，遠遠和個人使用截然不同，尤其企業格外會擔心內部機敏資料的外洩風險。
+根據國外一家提供企業級資料偵測與應變（DDR，Data Detection and Response ）的新創Cyberhaven，在2月底到3月初時調查旗下企業用戶，統計超過了160萬名員工的資料上網情形，高達8.2%的員工會用ChatGPT，其中竟有3.1％的員工將企業機敏資料輸入到ChatGPT上。在調查那一周內，平均每10萬名員工，就出現199次機密文件上傳警告通報，以及173起顧客資料上傳警告通報。
+最近一起引起眾人關注的則是韓國經濟學人媒體披露的三星半導體ChatGPT資料外洩事件，在開放半導體廠使用ChatGPT不到20天，就發生了3起機敏資料外洩事件，兩起是開發人員將設備量測與良率檢測特定用途的完整程式碼，輸入到ChatGPT上來尋求除錯，另一起則是助理將重要會議內容輸入ChatGPT來產生摘要。三星半導體緊急限縮ChatGPT的使用，並打算發展自製的GPT模型來替代。不過，早在三星發生資料外洩事件之前，就有很多企業都意識到自行訓練生成式AI模型的重要性，三星機敏資料外洩事件只是再次證實了這個考量的必要性。
+看準模型客製化需求，將AI超級電腦產品線變成雲端服務
+Nvidia正是看準了這一波ChatGPT爆紅背後的客製化AI模型訓練需求，宣布了全新的商業模式，不只是以硬體晶片生產和軟體技術提供為主的科技產品製造商，更進一步自己跳下來變成雲端服務供應商，要把自家AI超級電腦產品線，變成了雲端的AI超級電腦雲服務。
+黃仁勳以「人工智慧的iPhone時刻」來形容這股ChatGPT帶動的生成式AI浪潮，以及可能帶來的重大變革，而新推出的雲端AI超級電腦服務，就是Nvidia因應這股變革的關鍵戰略。「要透過瀏覽器將Nvidia AI帶給每一家企業。」他強調。
+DGX是Nvidia的AI超級電腦產品線，黃仁勳透露，他親手將第一臺DGX超級電腦提供給OpenAI，變成了大型語言模型技術突破背後的引擎。DGX最初的用途是為了AI研究，但現在已經進入了企業營運領域，需要支援全天候的運作，甚至，得有能力擴充到數十萬節點的龐大規模。至今，超過半數財富100大企業導入了這套要價不菲的設備。
+早在去年GTC大會上，Nvidia就先發表了第四代DGX H100超級電腦，採用了以COBAL發明人Grace Hopper 命名的Hopper架構，以及用這個架構打造的H100 GPU。這款AI超級電腦也在2023年初正式出貨。
+在第四代DGX超級電腦，搭載了8個H100模組，而H100 GPU還搭載了一個前一代A100 GPU所沒有的新加速引擎Transformer Engine，這是一個專門為NPL知名Transformer模型所打造的加速引擎，可以用來加速BERT、GPT-3模型的訓練。
+Nvidia透露，和前一代A100相比，H100在神經網路運算上，可以達到6倍的速度，也能兼顧精準度。甚至可以利用16位元精度與H100新增的8位元浮點資料格式（FP8），結合進階軟體演算法，還能進一步提高AI訓練速度，在同一款大型語言模型上，H100速度提升可以達到A100的9倍之多，推論速度甚至是前一代GPU的30倍。
+另外，H100也採用了第二代MIG技術，更容易支援雲端多租戶服務的組態方式，可以同時承載7個更小且隔離的實例，而A100只能承載1個。換句話說，H100是更適合發展成雲端服務型態的GPU。另外，Hopper新架構也開始能支援GPU機密運算，可以用來保護用戶AI模型、演算法機密性和完整性，因此，採用此架構的H100，可以讓企業在第三方業者提供的雲端基礎架構環境中，更安心散布和部署自家的AI模型。
+過去，多家公雲巨頭原本就推出採用A100的雲端VM服務，也紛紛宣布將跟進推出搭載新款H100 GPU的VM服務。例如甲骨文OCI率先推出搭載8顆H100 GPU的VM，甚至最大可以擴充到16,384個H100 GPU的超大規模叢集。AWS則宣布推出可以擴充到2萬個互連的H100 GPU的P5執行個體，Azure則是先推出H100 v5預覽版，Google Cloud後續也會推出。各大伺服器製造商也開始提供搭載H100 GPU的伺服器和系統。
+不只是出租AI超級電腦硬體，更有整套基礎架構軟體
+不過，今年Nvidia更進一步，不只是賣超級電腦硬體給公雲業者，還自己下海，變成了雲端服務供應商，黃仁勳宣布要推出AI超級電腦雲服務DGX Cloud，可以提供按月租用的超級電腦叢集，而且可以提供到H100等級的GPU。
+目前Nvidia將與三家公雲業者合作，在微軟Azure、Google Cloud和甲骨文OCI上提供DGX Cloud託管服務。將先在OCI上推出，最大可以提供到超過32,000個GPU的超級電腦叢集服務，Azure預計今年第二季推出，Google Cloud則在今年更晚時上線。
+DGX Cloud不只是提供超級電腦硬體出租，而是包含了一整套的超級電腦基礎架構，從最底層提供了高效能的儲存空間（單實例有10TB容量，每月輸出流量10TB），再上一層則是可以提供單一執行個體內建8個H100或A100 80GB Tensor核心GPU，每個節點共有640GB的GPU記憶體。
+這兩層是硬體體層基礎架構，再往上是超級電腦的基礎架構軟體層，包括了用於調度基礎架構軟體的Nvidia Base Command管理軟體，以及開發人員管理AI應用開發流程的Base Command Platform雲端SaaS服務，再加上最上一層的AI Enterprise軟體套件（包括了AI和資料科學工具和常用AI框架等）。
+從技術架構圖來看，雲端業者負責雲端服務的支援，而Nvidia則提供了AI技術客服窗口和AI專家的技術支援服務。
+這座超級電腦雲採取按月訂閱制，月租費是每個執行個體最低36,999美元起跳（約臺幣113萬元），遠低於一臺DGX A100在2020年中剛推出時的買斷報價19.9萬美元（約臺幣600萬元）。
+
+DGX Cloud包含了整套超級電腦基礎架構，最底層是高效能儲存，再上一層是H100或A100硬體VM，再往上是超級電腦的基礎架構軟體層，包括了運算資源調度的Nvidia Base Command管理軟體、管理AI應用和開發流程的Base Command Platform雲端SaaS服務，以及AI Enterprise軟體套件。雲端業者負責雲端服務支援，而Nvidia則提供了AI技術客服窗口和AI專家支援。圖片來源／Nvidia
+重頭訓練1,750億參數的GPT-3模型要多少億？
+根據Nvidia測試，過去要用一個3,000億個Token的公開網路資料集，來訓練出1,750參數的GPT-3模型，若採用1,024張A100 GPU，還是要花上24天。換句話說，企業若要想在一個月內訓練出參數量和ChatGPT相當的自有GPT-3模型，得採購128臺DGX A100超級電腦（單臺8個GPU），光硬體費用就超過7.68億元，就算願意等上一年訓練一次，也至少要投資5千多萬元採購9套。若換成按月租用的超級電腦服務，以月租費113萬元Ｘ128個超級電腦VM，則約臺幣1.4億元。雖然遠比7.6億元低得多，但仍是一筆巨額投資，甚至遠遠超過許多臺灣2千大規模企業一整年度的IT投資規模。只有少數大型高科技製造業或金控，才負擔得起自己從頭訓練出一套GPT-3模型的硬體費用，這還不包括人事費、軟體和資料集蒐集費用。生成式AI帶來的創新競爭，無疑是一項龐大財力的競賽。
+提供更低成本的預訓練模型服務，不用重頭訓練超大模型
+所以，為了搶攻全球企業瘋ChatGPT的浪潮，Nvidia還鎖定了那一群沒有足夠資源從頭訓練，但又想要打造專屬客製化模型的企業，推出了一套AI超級電腦軟體服務AI Foundations，提供預訓練的GPT-3模型，讓租用企業不用重新訓練，而是進行微調優化就可以打造出使用，可以讓企業用自己的資料，快速訓練出專屬的生成式模型，如此一來，不只可以大幅降低所需的運算量，訓練用資料集也不用準備到3,000億個Token之多，更能大幅縮短訓練時間。這正是Nvidia用來瞄準企業自建專屬生成式AI模型的殺手級服務，也能發揮按月租用模式的特性，用更低成本來打造出企業專屬的GPT-3模型。
+3種生成式模型服務，瞄準文字、影音和藥物開發3大類需求
+在這套AI Foundations服務中，提供了三種生成式模型，包括了文字NLP生成模型服務NeＭo，圖像生成模型服務Picasso，以及可以生成藥物分子結構的藥物生成模型BioNeMo服務。
+NeMo就是可以用來訓練出專屬GPT-3的模型服務，類似微軟Auzre的OpenAI API服務，可以讓企業訓練自己專屬的GPT-3模型。
+目前NeMo可以提供80億參數、430億參數和5,300億參數三種GPT-3預訓練模型，企業不用從頭開始訓練，而是可以直接使用這些預訓練模型來進行微（finetune）就可以客製化。NeMo還提供了一個Inform模型服務，內建向量資料庫，可供企業上傳自家企業資料轉換成嵌入向量儲存到Inform模型服務上，來限制客製化GPT-3模型推論的輸出，盡量侷限在企業提供的資料範圍內。
+不只是預訓練模型，NeMo還提供了兩種微調功能，一種是P-Tuning提示微調功能，透過模型訓練來優化提示問題，改用一個提示工程的嵌入向量（Prompt Vector）來取代提示問題，來提高提示工程的效果，提高GPT-3的準確度，另外，NeMo也支援真人回饋的強化學習優化提示工程做法，透過真人標記來設計獎勵模型，讓模型回答出更接近企業想要的答案。這個強化學習做法，也是借鏡了OpenAI用真人強化學習來打造出ChatGPT效果的做法。
+如同Azure OpenAI的GPT模型服務的推論內容過濾機制，Nvidia也在Nemo服務設計了內容護欄服務(Guardrail Service），企業可以監控每一次模型推論的輸出內容，檢查不適當的內容，也能設定偏差閥值或是指定領域來控管內容，避免模型意外輸出了不適合提供的內容。Picasso則是視覺的大型語言模型服務，可以透過簡單的文字或影像提示，來產生自訂的影像內容，還能生成影片，甚至是用於生成3D素材。而BioNeMo服務則可設計用來探索疾病成因的生物學小分子、蛋白質或抗體新分子結構，也能用來作為分子相互作用的最後篩選參考之用。
+
+Nvidia在AI Foundations服務中，提供了文字NLP生成模型服務NeMo，可以提供80億參數、430億參數和5,300億參數三種GPT-3預訓練模型，企業不用從頭開始訓練，而是可以直接使用這些預訓練模型來進行微調。圖片來源／Nvidia
+DGX Cloud就是雲端AI工廠
+Nvidia不單是出租超級電腦硬體，還將原本搭配DGX超級電腦的軟體產品，不論是Base Command管理軟體，或是可用於開發和部署AI應用的Ai Enterprise軟體，轉為變成在雲端提供的託管服務，而且可以支援混合雲架構，企業也可以和本地端DGX超級電腦混用。
+黃仁勳如此形容這個超級電腦雲服務的特性，DGX Cloud就像是一間在雲端的AI工廠一樣。 而AI Foundations服務就像是工廠中的鑄造廠，可以快速鑄造出一個又一個客製化的專屬生成式模型，這正是Nvidia搶攻龐大ChatGPT浪潮下的AI新戰略。
+"|https://www.ithome.com.tw//news/156286|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/960-tu_1-di_yi_tai_dgx-tu_pian_lai_yuan_-nvidia.jpg?itok=uNSk1Ztg
+cloud_20230406_10|2023-04-06|Cloud|Databricks針對製造業推出資料湖倉，加速資料分析和AI用例開發 |" Databricks持續擴展其資料湖解決方案，推出製造業專用資料湖倉平臺，在其原有的核心資料湖倉平臺上，開發出適用於製造業的資料分析解決方案，並且提供預建置加速器，支援數位雙生、物料預測和設備效率分析等用例。
+Databricks的資料湖倉是一種新型態的資料架構，透過整合資料湖和資料倉儲的優勢，提供更靈活的資料分析解決方案。資料湖倉可同時處理結構化和非結構化資料，且支援即時資料的處理與分析，藉由整合資料生態系中多種資料來源和工具，像是Delta Lake、Apache Spark、Pandas等，提供企業高效且可擴展的資料處理平臺。
+因應不同產業獨有特性，Databricks針對像是醫療保健或是金融服務等不同產業，皆推出專用的資料湖倉解決方案，而Databricks現在進一步發布製造業使用的資料湖倉平臺，解決製造產業的資料應用痛點。
+官方指出，製造業所產生的龐大資料量，較零售、媒體和金融服務高出2到4倍。製造業龐大的資料，在發展資料應用上會遭遇各種障礙，包括傳統本地儲存和雲端資料倉儲連接的複雜性，而且不斷成長的龐大資料量，也使得處理成本過於高昂，另外，生產過程所產生的結構化和非結構化資料，使資料分析工具碎片化，使用成本更高也更花費時間，還有過去批次資料處理節奏，也難以運用資料即時做出營運決策。
+製造業專用資料湖倉平臺建立在Databricks核心資料湖倉平臺之上，能夠克服這些資料應用障礙，在單一平臺提供資料分析、資料工程和機器學習功能，並且統一資料治理，使得製造業更容易發展資料應用。而且用戶還可方便地採用，支援各種工業資料用例的預建置解決方案加速器，現在該平臺可以使用的加速器包括數位雙生、物料預測、設備效率分析、電腦視覺和預測性維護等。
+"|https://www.ithome.com.tw//news/156266|https://s4.itho.me/sites/default/files/styles/picture_size_small/public/field/image/fireshot_capture_1731_-_the_lakehouse_for_manufacturing_-_the_databricks_blog_-_www.databricks.com_.png?itok=qjPEQMSY

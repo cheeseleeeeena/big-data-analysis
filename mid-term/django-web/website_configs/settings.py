@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_top_keyword_heho',
     'app_top_keyword_ithome',
+    'app_top_keyword_horoscope'
 ]
 
 MIDDLEWARE = [

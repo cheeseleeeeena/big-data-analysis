@@ -183,13 +183,13 @@
             },
         };
 
-        let canvas_mychrat = document.getElementById("mychart");
+        let canvas_mychart = document.getElementById("mychart");
 
         if (window.barchart) {
             barchart.destroy();
         }
 
-        barchart = new Chart(canvas_mychrat, {
+        barchart = new Chart(canvas_mychart, {
             type: 'bar',
             data: data,
             options: options,

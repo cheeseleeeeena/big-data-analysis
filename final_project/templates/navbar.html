@@ -1,0 +1,45 @@
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+  <div class="d-flex align-items-center justify-content-between">
+    <a href="{% url 'app_top_keywords:home' %}" class="logo d-flex align-items-center">
+      <span class="d-none d-lg-block">大數據分析</span>
+    </a>
+    <i class="bi bi-list toggle-sidebar-btn"></i>
+  </div><!-- End Logo -->
+
+</header><!-- End Header -->
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-heading">分頁</li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'app_top_keywords:home' %}">
+        <i class="bi bi-caret-right"></i>
+        <span>熱門關鍵詞分析</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'app_top_corps:home' %}">
+        <i class="bi bi-caret-right"></i>
+        <span>熱門科技公司分析</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'app_custom_keyword:home' %}">
+        <i class="bi bi-caret-right"></i>
+        <span>自訂關鍵詞分析</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'app_pk:home' %}">
+        <i class="bi bi-caret-right"></i>
+        <span>3C產業聲量大PK</span>
+      </a>
+    </li>
+  </ul>
+</aside><!-- End Sidebar-->

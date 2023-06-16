@@ -1,0 +1,443 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>大數據模板</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+
+    <!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- CSS File -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    {%include 'navbar.html'%}
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>3C產業聲量大PK</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">3C Industry Volume</a></li>
+                    <li class="breadcrumb-item active">3C產業聲量大PK</li>
+                </ol>
+            </nav>
+        </div>
+        <section class="section dashboard">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">熱門關鍵字瀏覽與繪圖</h5>
+                            <form style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+                                <fieldset class="row mb-3 col-md-6">
+                                    <legend class="col-form-label col-lg-12 pt-0"><b>你想關注？</b></legend>
+                                    <div class="col-lg-12">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="nerradio" value="9"
+                                                    checked>
+                                                產品
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="nerradio" value="7">
+                                                組織
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="row mb-3 col-md-6">
+                                    <legend class="col-form-label col-lg-12 pt-0"><b>PK候選詞數量</b></legend>
+                                    <div class="col-lg-12">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="topkradio" value="3"
+                                                    checked>
+                                                3
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="topkradio" value="5">
+                                                5
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="topkradio"
+                                                    value="10">
+                                                10
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">3C產業 TOP 3 產品</h5>
+                            <canvas id="pkBarChart" style="max-height: 400px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">3C產業 TOP 3 產品 網路聲量分析</h5>
+                            <div id="leaderboardDisplay"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">3C產業 TOP 3 產品 年度聲量走勢</h5>
+                            <canvas id="pkLineChart" style="max-height: 400px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+
+<!-- Load jQuery library -->
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+<!-- Load moment.js library before chartjs for line chart -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+
+<!-- Load D3.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+
+<!-- Load custom JavaScript -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+<!-- Load Chart.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+
+<script>
+
+    /**
+     * String prototype method to format string with values.
+     * @returns {string} Formatted string.
+     */
+    String.prototype.format = function () {
+        var result = this;
+        if (arguments.length == 0) return null;
+        for (var i = 0; i < arguments.length; i++) {
+            var re = new RegExp("\\{" + i + "\\}", "gm");
+            result = result.replace(re, arguments[i]);
+        }
+        return result;
+    };
+
+    /**
+     * String static method to format string with values.
+     * @param {string} str String to be formatted.
+     * @returns {string} Formatted string.
+     */
+    String.format = function (str) {
+        if (arguments.length == 0) return null;
+        var str = arguments[0];
+        for (var i = 1; i < arguments.length; i++) {
+            var re = new RegExp("\\{" + (i - 1) + "\\}", "gm");
+            str = str.replace(re, arguments[i]);
+        }
+        return str;
+    };
+
+</script>
+
+<script>
+
+    // Call the AJAX function
+    call_ajax();
+
+    function call_ajax() {
+        $.ajax({
+            type: "POST",
+            url: "api_get_pk_data/",
+            data: {},
+            success: function (received) {
+                // Process the received data
+                const list_freq_daily_line_chart = received["list_freq_daily_line_chart"];
+                const list_pkNames = received["list_pkNames"];
+                const list_photos = received["list_photos"];
+                const list_freq_news_category = received["list_freq_news_category"];
+                const list_categories = received["list_category"];
+                const list_sentiInfo = received["list_sentiInfo"];
+                const list_total_articles = received["list_total_articles"];
+                const list_total_frequency = received["list_total_frequency"];
+                const list_colors = received["list_colors"];
+
+                // Display the leaderboard
+                displayLeaderboard(
+                    list_pkNames,
+                    list_sentiInfo,
+                    list_photos,
+                    list_sentiInfo,
+                    list_freq_news_category,
+                    list_total_articles,
+                    list_total_frequency
+                );
+
+                // Draw the bar chart
+                drawBarChart(
+                    list_pkNames,
+                    list_freq_news_category,
+                    list_colors,
+                    list_categories
+                );
+
+                // Draw the line chart
+                drawLineChart(list_pkNames, list_freq_daily_line_chart, list_colors);
+            },
+        });
+    }
+
+
+    function displayLeaderboard(
+        list_pkNames,
+        list_sentiInfo,
+        list_photos,
+        list_freq_news_category,
+        list_total_articles,
+        list_total_frequency
+    ) {
+
+        // Define colors for sentiment values
+        const textColor = ["text-danger", "text-secondary", "text-primary"]; //red, grey, light blue
+
+        // Create new div to hold leaderboard
+        const new_div = document.createElement("div");
+
+        // Loop through player data and create HTML snippets for each
+        for (let i = 0; i < list_pkNames.length; i++) {
+            let html_snippet = `<div class="row">
+                          <div class="col-md-3">
+                            <canvas id="article_senti_pie_chart" style="max-height: 200px;"></canvas>
+                          </div>
+                          <div class="col-md-8 board-info">
+                              <h3>{1}</h3>
+                              <p>在{2}篇新聞中,被提及{3}次</p>
+                              <p>正面報導59%，負面報導11%，中立報導30%</p>
+                          </div>
+                      </div>
+                      <hr>`;
+
+            // Create sentiment string with color coding
+            let senti_str = ""; //sentiment string
+            for (let j = 0; j <= 2; j++) {
+                senti_str += "<span class={0}>{1}%</span>".format(
+                    textColor[j],
+                    list_sentiInfo[i][j]
+                );
+            }
+
+            // Fill in data for HTML snippet
+            html_snippet = html_snippet.format(
+                list_photos[i],
+                list_pkNames[i],
+                list_total_articles[i],
+                list_total_frequency[i],
+                senti_str   //sentiment percentage
+            );
+
+            // Add HTML snippet to new div
+            new_div.innerHTML += html_snippet;
+        }
+
+        // Append new div to leaderboard display
+        document.getElementById("leaderboardDisplay").appendChild(new_div);
+    }
+
+    Chart.defaults.global.defaultFontSize = 18; //chart.js內定字型大小，可以自行調整
+
+    function drawBarChart(
+        list_pkNames,
+        list_freq_news_category,
+        list_colors,
+        list_categories
+    ) {
+        const chartElem = document.getElementById("pkBarChart");
+
+        let pkDataToDraw = new Array();
+        for (let i = 0; i < 3; i++) {
+            pkDataToDraw.push({
+                label: list_pkNames[i], //標題 陳時中 黃珊珊  蔣萬安
+                backgroundColor: list_colors[i],
+
+                data: list_freq_news_category[i],
+                borderWidth: 1,
+            });
+        }
+
+        let options = {
+            legend: {
+                labels: {
+                    fontColor: 'white',
+                },
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: "white",
+                    },
+                    gridLines: {
+                        color: "rgba(255, 255, 255, 0.3)",
+                    },
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: "white",
+                    },
+                    gridLines: {
+                        color: "rgba(255, 255, 255, 0.3)",
+                    },
+                }],
+            },
+        };
+
+        let chartSpec = {
+            type: "bar",
+            data: {
+                labels: list_categories, //['全部', '政治', '兩岸', '產經', '生活', '社會']
+                datasets: pkDataToDraw, //前面整理好的繪圖的資料放在此
+            },
+            options: options,
+        };
+
+        return new Chart(chartElem, chartSpec);
+    }
+
+
+    function drawLineChart(
+        list_pkNames,
+        list_freq_daily_line_chart,
+        list_colors
+    ) {
+        const lineChartElem = document
+            .getElementById("pkLineChart")
+            .getContext("2d");
+
+        let pkDataToDraw = new Array();
+        for (let i = 0; i < 3; i++) {
+            pkDataToDraw.push({
+                label: list_pkNames[i], //圖標題名稱
+                borderColor: list_colors[i], //線條顏色
+                borderWidth: 1,
+                backgroundColor: list_colors[i], //背景底色
+                data: list_freq_daily_line_chart[i], //x y資料置放於data
+            });
+        }
+
+        let options_detail = {
+            legend: {
+                display: true,
+                fontColor: "white",
+                labels: {
+                    fontSize: 16,
+                    fontColor: 'white',
+                },
+            },
+            scales: {
+                xAxes: [
+                    {
+                        ticks: {
+                            fontColor: "white",
+                        },
+                        type: "time",
+                        time: {
+                            unit: "day",
+                            displayFormats: {
+                                day: "MM/DD",
+                            },
+                        },
+                        gridLines: {
+                            color: "rgba(255, 255, 255, 0.3)",
+                        },
+                    },
+                ],
+                yAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true,
+                            fontColor: "white",
+                        },
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: "篇數",
+                            fontColor: "white",
+                            fontColor: "rgba(120, 121, 186)",
+                        },
+                        gridLines: {
+                            color: "rgba(255, 255, 255, 0.3)",
+                            fontColor: "white",
+                        },
+                    },
+                ],
+            },
+        };
+
+        //定義繪圖規格
+        let chartSpec = {
+            type: "line",
+            data: {
+                datasets: pkDataToDraw,
+            },
+            options: options_detail,
+        };
+
+        new Chart(lineChartElem, chartSpec);
+        //return new Chart(lineChartElem, chartSpec);
+    }
+
+    function randomColors(length) {
+        var pool = [];
+        for (i = 0; i < length; i++) {
+            pool.push(dynamicColors());
+        }
+
+        return pool;
+    }
+
+    function dynamicColors() {
+        // rgb + alpha(transparent color透明度) 透明度請自行調整 數字越小越透明
+        var r = Math.floor(Math.random() * 255);
+        var g = Math.floor(Math.random() * 255);
+        var b = Math.floor(Math.random() * 255);
+        return "rgba(" + r + "," + g + "," + b + ", 0.2)";
+    }
+</script>

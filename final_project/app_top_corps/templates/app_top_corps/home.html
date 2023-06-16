@@ -1,0 +1,382 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>大數據模板</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+
+    <!-- CSS File -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    {%include 'navbar.html'%}
+    <main id="main" class="main">
+        <div class="pagetitle">
+            <h1>熱門科技公司分析</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">Technology Co. Analysis</a></li>
+                    <li class="breadcrumb-item active">熱門科技公司分析</li>
+                </ol>
+            </nav>
+        </div>
+        <section class="section dashboard">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">科技新聞 熱門公司總覽</h5>
+                            <p style="text-align: center;">了解<b>各個科技領域</b>的新聞都在關注哪些公司
+                            </p>
+                            <form style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+                                <fieldset class="row mb-3 col-md-6">
+                                    <legend class="col-lg-12 col-form-label pt-0"><b>科技領域</b></legend>
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio" value="全部"
+                                                    checked>
+                                                <label class="form-check-label">
+                                                    全部
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="radio" name="cateradio"
+                                                        value="政治">
+                                                    政治
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                    value="科技">
+                                                <label class="form-check-label" for="gridRadios2">
+                                                    科技
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                    value="運動">
+                                                <label class="form-check-label">
+                                                    運動
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                    value="證卷">
+                                                <label class="form-check-label">
+                                                    證卷
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                    value="產經">
+                                                <label class="form-check-label">
+                                                    產經
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                    value="娛樂">
+                                                <label class="form-check-label">
+                                                    娛樂
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                    value="生活">
+                                                <label class="form-check-label">
+                                                    生活
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="row mb-3 col-lg-6">
+                                    <legend class="col-lg-12 col-form-label pt-0"><b>關鍵詞數量</b></legend>
+                                    <div class="col-lg-12">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="topkradio" value="3"
+                                                    checked>
+                                                3
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="topkradio" value="5">
+                                                5
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="topkradio"
+                                                    value="10">
+                                                10
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">資訊安全領域 TOP 5 公司排行</h5>
+                            <canvas id="mychart" style="max-height: 400px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">熱門文字云</h5>
+                            <div id="cloud" style="max-height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">公司熱門度</h5>
+                            <ul id="topkeys" class="list-group list-group-flush"></ul>
+                        </div>
+                    </div>
+                </div>
+                </row>
+        </section>
+    </main>
+
+    <!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- chartjs js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="https://cdn.rawgit.com/jasondavies/d3-cloud/v1.2.1/build/d3.layout.cloud.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
+
+
+<!-- 程式碼區 -->
+<script>
+
+    $("input[name='cateradio']").on('change', function () {
+        call_ajax();
+    });
+
+    // event handling for top k radio button
+    $("input[name='topkradio']").on('change', function () {
+        call_ajax();
+    });
+
+    // Call ajax function when page is loaded
+    call_ajax();
+
+    function call_ajax() {
+        const cate = $("input[name='cateradio']:checked").val();
+        const topk = $("input[name='topkradio']:checked").val();
+        $.ajax({
+            type: "POST",
+            //url: "/topperson/api_get_topPerson/",
+            url: "http://127.0.0.1:8000/topcorps/api_get_topPerson/",
+            data: {
+                "news_category": cate,
+                "topk": topk
+            },
+            success: function (received) {
+                $('#topkeys').empty();
+                $('#cloud').empty();
+                console.log(received);
+
+                if (received.length == 0) {
+                    $('#cloud').append("<h4>No Data!</h4>");
+                    $('#topkeys').append("<h4>No Data!</h4>");
+                    return
+                }
+
+                const chart_data = received.chart_data;
+                showChart(chart_data);
+
+                const wf_pairs = received.wf_pairs;
+                showTopKeys(wf_pairs);
+
+                topWordToDraw = received.data_cloud;
+                drawCloud(topWordToDraw, '#cloud');
+
+            }
+        });
+    };
+
+    function drawCloud(topWordToDraw, element_id) {
+        console.log(topWordToDraw);
+        const width = 400;
+        const height = 400;
+
+        d3.layout.cloud()
+            .size([width, height])
+            .words(topWordToDraw)
+            .rotate(function () {
+                return 0;
+            })
+            .font("Impact")
+            .fontSize(function (d) {
+                return d.size;
+            })
+            .on("end", draw)
+            .start();
+
+        function draw(words) {
+
+            const fill = d3.scale.category20();
+
+            d3.select(element_id)
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .append("g")
+                .attr("transform", "translate(" + ~~(width / 2) + "," + ~~(height / 2) + ")")
+                .selectAll("text")
+                .data(words)
+                .enter()
+                .append("text")
+                .style("font-size", function (d) {
+                    return d.size + "px";
+                })
+                .style("-webkit-touch-callout", "none")
+                .style("-webkit-user-select", "none")
+                .style("-khtml-user-select", "none")
+                .style("-moz-user-select", "none")
+                .style("-ms-user-select", "none")
+                .style("user-select", "none")
+                .style("cursor", "default")
+                .style("font-family", "Impact")
+                .style("fill", function (d, i) {
+                    return fill(i);
+                })
+                .transition()
+                .duration(600)
+                .style("font-size", function (d) { return d.size + "px"; })
+                .attr("transform", function (d) {
+                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                })
+                .style("fill-opacity", 1)
+                .attr("text-anchor", "middle")
+                .attr("transform", function (d) {
+                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                })
+                .text(function (d) {
+                    return d.text;
+                })
+        }
+    }
+
+    function showTopKeys(items) {
+        $('#topkeys').empty();
+        for (let i = 0; i < items.length; i++) {
+            let item_li = "<li class='list-group-item d-flex justify-content-between align-items-center'>" + items[i][0] + "<span class='badge rounded-pill'>" + items[i][1] + "</span></li>";
+            $('#topkeys').append(item_li);
+        }
+    }
+
+    let canvas_mychrat = document.getElementById("mychart");
+
+    function showChart(chart_data) {
+        const ctx = canvas_mychrat.getContext('2d');
+
+        // Create gradient for chart bars.
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(120, 121, 186, 1)'); // Start color
+        gradient.addColorStop(1, 'rgba(49, 161, 229, 0.2)'); // End color
+
+        // Extract chart data from input object.
+        let values = chart_data.values;
+        let labels = chart_data.labels;
+        let category = chart_data.category;
+
+        // Construct data object for chart.
+        let data = {
+            labels: labels,
+            datasets: [{
+                label: category,
+                data: values,
+                backgroundColor: gradient,
+                borderColor: gradient,
+                hoverBackgroundColor: 'rgba(49, 161, 229, 0.5)',
+                borderWidth: 2,
+            }],
+        };
+
+        // Define options for chart.
+        let options = {
+            legend: {
+                labels: {
+                    fontSize: 18,
+                    fontColor: 'white',
+                },
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: "white",
+                        fontSize: 18,
+                    },
+                    gridLines: {
+                        color: "rgba(255, 255, 255, 0.3)",
+                    },
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: "white",
+                        fontSize: 18,
+                    },
+                    gridLines: {
+                        color: "rgba(255, 255, 255, 0.3)",
+                    },
+                }],
+            },
+        };
+
+        // Destroy existing chart if one already exists.
+        if (window.barchart) {
+            barchart.destroy();
+        }
+
+        // Create new chart with input data.
+        barchart = new Chart(canvas_mychrat, {
+            type: 'bar',
+            data: data,
+            options: options,
+        });
+    }
+</script>

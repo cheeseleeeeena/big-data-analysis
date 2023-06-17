@@ -223,7 +223,7 @@
                     return
                 }
 
-                $("#bar-chart-title").text("【" + cate + "】" + "TOP " + topk + " 熱門關鍵字");
+                $("#bar-chart-title").text(`【${cate}】 TOP ${topk}熱門關鍵字`);
 
                 const chart_data = received.data.data_barchart;
                 showChart(chart_data);

@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>大數據模板</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+
+    <!-- The fonts used by the website. -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+            rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <!-- The vendor CSS files used by the website. -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+
+    <!-- CSS File -->
+    <!-- The custom CSS file used by the website. -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+{%include 'navbar.html'%}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>自訂關鍵詞分析</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Custom Keyword Analysis</a></li>
+                <li class="breadcrumb-item active">自訂關鍵詞分析</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section dashboard">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">自訂關鍵詞輸入條件</h5>
+                        <form style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+                            <div class="col-md-6">
+                                <fieldset class="row mb-3 col-lg-12">
+                                    <legend class="col-form-label col-lg-12 pt-0"><b>條件</b></legend>
+                                    <div class="col-lg-12">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="condradio"
+                                                       value="and">
+                                                and
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="condradio"
+                                                       value="or" checked>
+                                                or
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="row mb-3 col-lg-12">
+                                    <label class="col-lg-12 col-form-label"><b>您想了解哪些關鍵詞?</b></label>
+                                    <div class="col-lg-12" style="padding: 0px 7rem">
+                                        <input id="input_keyword" name="userkey" value="台灣 5G"
+                                               class="form-control form-control-success">
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6">
+                                <fieldset class="row mb-3 col-lg-12">
+                                    <legend class="col-form-label col-lg-12 pt-0"><b>科技領域</b></legend>
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                       value="全部" checked>
+                                                <label class="form-check-label">
+                                                    全部
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="radio" name="cateradio"
+                                                           value="5G通訊">
+                                                    5G通訊
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                       value="AI與大數據">
+                                                <label class="form-check-label">
+                                                    AI與大數據
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                       value="物聯網">
+                                                <label class="form-check-label">
+                                                    物聯網
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                       value="區塊鏈">
+                                                <label class="form-check-label">
+                                                    區塊鏈
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                       value="半導體與電子產業">
+                                                <label class="form-check-label">
+                                                    半導體與電子產業
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                       value="資訊安全">
+                                                <label class="form-check-label">
+                                                    資訊安全
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="cateradio"
+                                                       value="雲端運算">
+                                                <label class="form-check-label">
+                                                    雲端運算
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="row mb-3 col-lg-12">
+                                    <legend class="col-form-label col-lg-12 pt-0"><b>最近多少周?</b></legend>
+                                    <div class="col-lg-12">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="wkradio"
+                                                       value="1">
+                                                1
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="wkradio"
+                                                       value="2" checked>
+                                                2
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="wkradio"
+                                                       value="3">
+                                                3
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="wkradio"
+                                                       value="6">
+                                                6
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="wkradio"
+                                                       value="8">
+                                                8
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="wkradio"
+                                                       value="12">
+                                                12
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </fieldset>
+
+                            </div>
+                            <fieldset class="row mb-3 col-md-12">
+                                <div class="col-lg-12" style="padding: 0px 7rem">
+                                    <button type="button" id="btn-ok"
+                                            class="form-control form-control-success"
+                                            style="color:#7879BA; background-color: rgba(255, 255, 255, 0.7)">查詢
+                                    </button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" id="bar-chart-title">【你關心的關鍵詞】受 X 篇新聞報導關注，被提及了 Y
+                            次！</h5>
+                        <canvas id="keyword_time_line_chart" style="max-height: 400px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" id="paragraph-title">【你關心的關鍵詞】所在的文章段落</h5>
+                        <ul id="same_paragraph" class="list-group list-group-flush"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" id="wordcloud-title">與【你關心的關鍵詞】同時出現的TOP 10 文字雲圖</h5>
+                        <div id="cloud" style="max-height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" id="related-words-title">與【你關心的關鍵詞】同時出現的關鍵字</h5>
+                        <ul id="related_words" class="list-group list-group-flush">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" id="related-news-title">共有 N 篇新聞與【你關心的關鍵詞】有關</h5>
+                        <ul id="newslinks" class="list-group list-group-flush">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" id="sentiment-pie-title">【你關心的關鍵詞】被報導之情緒分佈</h5>
+                        <canvas id="article_senti_pie_chart" style="max-height: 400px; padding: 0px;"></canvas>
+                        <div>
+                            <ul id="senti_info" style="list-style-type: none; padding: 15px; margin: 0;"></ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" id="sentiment-linechart-title">
+                            【你關心的關鍵詞】被報導之正負面情緒變化時間軸</h5>
+                        <canvas id="time_line_chart" style="max-height: 400px;"></canvas>
+
+                    </div>
+                </div>
+            </div>
+            </row>
+        </div>
+    </section>
+</main>
+
+<!-- Load jQuery and Popper.js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Load Bootstrap, Moment.js, D3.js, and D3 Cloud -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+<script src="https://cdn.rawgit.com/jasondavies/d3-cloud/v1.2.1/build/d3.layout.cloud.js"></script>
+
+<!-- Load Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+<!-- Load paginathing.js from a CDN and a local pagination_bs4.js file -->
+<!--
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/gh/alfrcr/paginathing/dist/paginathing.min.js"></script>
+-->
+<script type="text/javascript" src="{% static 'pagination_bs4.js'%} "></script>
+
+<!-- Load main.js from a local static file -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
+
+
+<script>
+
+    call_ajax();
+
+    $('#btn_ok').on('click', function () {
+        call_ajax();
+    });
+
+    $("input[name='cateradio']").on('change', function () {
+        call_ajax();
+    });
+
+    $("input[name='wkradio']").on('change', function () {
+        call_ajax();
+    });
+
+    $("input[name='condradio']").on('change', function () {
+        call_ajax();
+    });
+
+    // Draw the sentiment line chart here!
+    let linechartElem = document
+        .getElementById("time_line_chart")
+        .getContext("2d");
+
+
+    // pie chart
+    let piechartElem = document
+        .getElementById("article_senti_pie_chart")
+        .getContext("2d");
+
+    function call_ajax() {
+        const userkey = $("#input_keyword").val();
+        const weeks = $("input[name='wkradio']:checked").val();
+        const cate = $("input[name='cateradio']:checked").val();
+        const cond = $("input[name='condradio']:checked").val();
+
+        if (userkey.length < 2) {
+            alert("輸入關鍵字不可空白或小於兩個中文字!");
+            return 0;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/customkey/api_get_top_userkey/",
+            data: {
+                "userkey": userkey,
+                'cate': cate,
+                'weeks': weeks,
+                'cond': cond,
+            },
+            success: function (received) {
+
+                // Extract data from received object
+                /*
+                const {
+                    kw_freq,
+                    kw_occurrence,
+                    key_time_freq: data_key_time_freq,
+                    newslinks,
+                    related_words,
+                    same_paragraph,
+                    clouddata: topWordToDraw,
+                    sentiCount: data_pie,
+                    data_pos,
+                    data_neg
+                } = received;
+
+                 */
+
+                console.log(received)
+
+                const time_chart_data = received.key_time_freq;
+                const kw_freq = received.kw_freq;
+                const kw_occurrence = received.kw_occurrence;
+
+                if (cate == '全部') {
+                    $("#bar-chart-title").text(`【${userkey}】受 ${kw_occurrence} 篇新聞報導關注，被提及了 ${kw_freq} 次！`);
+                } else {
+                    $("#bar-chart-title").text(`【${userkey}】受 ${kw_occurrence} 篇「${cate}」新聞報導關注，被提及了 ${kw_freq} 次！`);
+                }
+
+
+                $("#paragraph-title").text(`【${userkey}】所在的文章段落`);
+                $("#wordcloud-title").text(`與【${userkey}】同時出現的TOP 10 文字雲圖`);
+                $("#related-words-title").text(`與【${userkey}】同時出現的關鍵字`);
+                $("sentiment-pie-title").text(`【${userkey}】被報導之情緒分佈`);
+                $("#sentiment-linechart-title").text(`【${userkey}】被報導之正負面情緒變化時間軸`);
+
+
+                // Draw time chart
+                showtimechart(time_chart_data);
+
+
+                const same_paragraph = received["same_paragraph"];
+
+                $("#same_paragraph").empty();
+
+                for (let i = 0; i < same_paragraph.length; i++) {
+                    const msg = "<li>" + same_paragraph[i] + "</li>";
+                    //const msg = `<li class="d-flex justify-content-between align-items-center">${same_paragraph[i]}</li>`;
+
+                    $("#same_paragraph").append(msg);
+                }
+
+                //clear the paging area
+                //
+                $(".pagination-container-paragraph").empty();
+
+                // process pagination
+                paginate_paragraph();
+
+
+                topWordToDraw = received.clouddata;
+                console.log(topWordToDraw)
+                $("#cloud").empty();
+                drawCloud(topWordToDraw, "#cloud");
+
+
+                const related_words = received["related_words"];
+                $("#related_words").empty();
+                for (let i = 0; i < related_words.length; i++) {
+                    const msg = "<li class='list-group-item d-flex justify-content-between align-items-center'>" + related_words[i][0] + "<span class='badge rounded-pill'>" + related_words[i][1] + "</span></li>";
+                    $("#related_words").append(msg);
+                }
+
+
+                // display number of articles or stories
+                const num_articles = received["num_articles"];
+                console.log(num_articles);
+                $("#related-news-title").text(`共有 ${num_articles} 篇新聞與【${userkey}】有關`);
+
+
+                // show news title and link
+                const newslinks = received["newslinks"];
+                $("#newslinks").empty();
+                if (newslinks.length == 0) {
+                    alert("No result returned!");
+                }
+                // show news title and link
+                for (let i = 0; i < newslinks.length; i++) {
+                    const msg =
+                        '<li><a href="' +
+                        newslinks[i].link +
+                        '" target="_blank">' +
+                        newslinks[i].category +
+                        ":" +
+                        newslinks[i].title +
+                        "</a></li>";
+                    $("#newslinks").append(msg);
+                }
+
+                //clear the paging area
+                $(".pagination-container-newslinks").empty();
+
+                // process pagination
+                paginate_newslinks();
+
+
+                // draw pie chart
+                const data_pie = received["sentiCount"];
+                if (window.piechart) piechart.destroy();
+                piechart = drawPieChart(piechartElem, data_pie);
+
+                $("#senti_info").empty();
+                for (let k in data_pie) {
+                    $("#senti_info").append(`<li>${k}: ${data_pie[k]}篇</li>`);
+                }
+
+                // draw time-based line chart
+                const data_pos = received["data_pos"];
+                const data_neg = received["data_neg"];
+
+                if (window.linechart) linechart.destroy();
+                linechart = drawLineChart(linechartElem, data_pos, data_neg);
+
+
+            },
+            error: function (msg, status) {
+                console.log(msg);
+                console.log(status);
+            },
+        });
+    }
+
+    function showtimechart(data) {
+        const ctx = document.getElementById("keyword_time_line_chart").getContext('2d');
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, "rgba(120, 121, 186,1)");
+        gradient.addColorStop(1, "rgba(49, 161, 229,0.1)");
+        const options = {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 's2',
+                    borderColor: "rgba(120, 121, 186,0.5)",
+                    backgroundColor: gradient,
+                    data,
+                }]
+            },
+            options: {
+                legend: {
+
+                    display: false
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontColor: "white",
+                            fontSize: 18,
+                        },
+                        type: 'time',
+                        time: {
+                            unit: 'day',
+                            displayFormats: {day: 'MM/DD'}
+                        },
+                        gridLines: {color: "rgba(255, 255, 255, 0.3)"}
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            fontColor: "white",
+                            fontSize: 18,
+                        },
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: "出現次數",
+                            fontColor: "rgba(120, 121, 186)"
+                        },
+                        gridLines: {color: "rgba(255, 255, 255, 0.3)"}
+                    }]
+                }
+            }
+        };
+        if (window.line_chart) {
+            line_chart.destroy();
+        }
+        line_chart = new Chart(ctx, options);
+    }
+
+    function paginate_newslinks() {
+        // 把顯示在#newslinks的條列式的文字 整理成逐頁顯示
+        $("#newslinks").paginathing({
+            perPage: 10, // show item per page
+            insertAfter: "#newslinks", //class or id (eg: .element or #element). append the paginator after certain element
+
+            limitPagination: 4, // false or number. Limiting your pagination number.
+            pageNumbers: true, // showing current page number of total pages number, to work properly limitPagination must be true
+            prevNext: true, // enable previous and next button
+            firstLast: true, // enable first and last button
+            prevText: "&laquo;", // Previous button text
+            nextText: "&raquo;", // Next button text
+            firstText: "First", // "First button" text
+            lastText: "Last", // "Last button" text
+            containerClass: "pagination-container-newslinks", //這是頁碼元件的class名稱 清除時會用到 extend default container class
+            ulClass: "pagination", // extend default ul class
+            liClass: "page", // extend li class
+            activeClass: "active", // active link class
+            disabledClass: "disable", // disabled link class,
+        });
+    } //pagination
+
+    function paginate_paragraph() {
+        $("#same_paragraph").paginathing({
+            perPage: 5,
+            insertAfter: "#same_paragraph",
+            limitPagination: 5,
+            pageNumbers: true,
+            prevNext: true,
+            firstLast: true,
+            prevText: "&laquo;",
+            nextText: "&raquo;",
+            firstText: "First",
+            lastText: "Last",
+            containerClass: "pagination-container-paragraph d-flex flex-wrap justify-content-center",
+            ulClass: "pagination",
+            liClass: "page",
+            activeClass: "active",
+            disabledClass: "disable",
+        });
+    }
+
+    function drawCloud(topWordToDraw, element_id) {
+        const width = 500, height = 400;
+
+        d3.layout.cloud()
+            .size([width, height])
+            .words(topWordToDraw)
+            .rotate(0)
+            .font('Impact')
+            .fontSize(d => d.size)
+            .on('end', (words) => {
+                const fill = d3.scale.category20();
+
+                d3.select(element_id)
+                    .append('svg')
+                    .attr('width', width)
+                    .attr('height', height)
+                    .append('g')
+                    .attr('transform', `translate(${width / 2}, ${height / 2})`)
+                    .selectAll('text')
+                    .data(words)
+                    .enter()
+                    .append('text')
+                    .attr('transform', d => `translate(${d.x}, ${d.y})rotate(${d.rotate})`)
+                    .style('font-size', d => `${d.size}px`)
+                    .style('-webkit-touch-callout', 'none')
+                    .style('-webkit-user-select', 'none')
+                    .style('-khtml-user-select', 'none')
+                    .style('-moz-user-select', 'none')
+                    .style('-ms-user-select', 'none')
+                    .style('user-select', 'none')
+                    .style('cursor', 'default')
+                    .style('font-family', 'Impact')
+                    .style('fill', (d, i) => fill(i))
+                    .transition()
+                    .duration(600)
+                    .style('font-size', d => `${d.size}px`)
+                    .style('fill-opacity', 1)
+                    .attr('text-anchor', 'middle')
+                    .text(d => d.text);
+            })
+            .start();
+    }
+
+    function drawPieChart(chartElem, chartdata) {
+        const chartSpec = {
+            type: 'pie',
+            data: {
+                labels: ['正面', '負面', '中立'],
+                datasets: [{
+                    data: [
+                        chartdata.Positive,
+                        chartdata.Negative,
+                        chartdata.Neutral,
+                    ],
+                    backgroundColor: [
+                        'rgba(49, 161, 229,0.3)',
+                        'rgba(120, 121, 186,0.3)',
+                        'rgba(150,150,150,0.3)',
+                    ],
+                }],
+            },
+            options: {
+                legend: {
+                    labels: {
+                        fontSize: 18,
+                        fontColor: 'white',
+                    },
+                },
+            },
+        };
+        return new Chart(chartElem, chartSpec);
+    }
+
+    function drawLineChart(linechartElem, data_pos, data_neg) {
+        const createGradient = (color1, color2) => {
+            let gradient = linechartElem.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, `rgba(${color1},0.6)`);
+            gradient.addColorStop(1, `rgba(${color1},0.1)`);
+            return gradient;
+        }
+
+        const createDataset = (label, data, borderColor, backgroundColor) => {
+            return {
+                label: label,
+                data: data,
+                borderColor: borderColor,
+                backgroundColor: backgroundColor,
+                borderWidth: 2,
+                fill: true,
+            }
+        }
+
+        const options_detail = {
+            legend: {
+                display: true,
+                fontColor: "white",
+                labels: {
+                    fontSize: 18,
+                    fontColor: 'white',
+                },
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        fontColor: "white",
+                        fontSize: 18,
+                    },
+                    type: "time",
+                    time: {
+                        unit: "day",
+                        displayFormats: {
+                            day: "MM/DD",
+                        },
+                    },
+                    gridLines: {
+                        color: "rgba(255, 255, 255, 0.3)",
+                    },
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: "white",
+                        fontSize: 18,
+                    },
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: "篇數",
+                        fontColor: "white",
+                    },
+                    gridLines: {
+                        color: "rgba(255, 255, 255, 0.3)",
+                        fontColor: "white",
+                    },
+                }],
+            },
+        }
+
+        const dataPos = createDataset("正面", data_pos, "rgba(49, 161, 229,0.8)", createGradient("49, 161, 229"));
+        const dataNeg = createDataset("負面", data_neg, "rgba(120, 121, 186,0.8)", createGradient("120, 121, 186"));
+
+        const chart_spec = {
+            type: "line",
+            data: {
+                datasets: [dataPos, dataNeg],
+            },
+            options: options_detail,
+        }
+
+        return new Chart(linechartElem, chart_spec);
+    }
+</script>

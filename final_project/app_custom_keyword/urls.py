@@ -1,7 +1,7 @@
 from django.urls import path
-from app_custom_keyword import views
+from . import views
 
-app_name="app_custom_keyword"
+app_name = "app_custom_keyword"
 
 urlpatterns = [
     

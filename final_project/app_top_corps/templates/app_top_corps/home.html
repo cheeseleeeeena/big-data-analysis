@@ -228,7 +228,9 @@
                     return
                 }
 
-                $("#bar-chart-title").text("【" + cate + "】" + "TOP " + topk + " 科技公司排行");
+
+
+                $("#bar-chart-title").text(`【${cate}】 TOP ${topk}科技公司排行`);
 
                 const chart_data = received.data.data_barchart;
                 showChart(chart_data);

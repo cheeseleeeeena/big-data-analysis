@@ -1,8 +1,9 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -72,10 +73,9 @@
                                         </div>
                                     </fieldset>
                                     <fieldset class="row mb-3 col-lg-12">
-                                        <label for="inputText"
-                                            class="col-lg-12 col-form-label"><b>您想了解哪些關鍵詞?</b></label>
+                                        <label class="col-lg-12 col-form-label"><b>您想了解哪些關鍵詞?</b></label>
                                         <div class="col-lg-12" style="padding: 0px 7rem">
-                                            <input id="input_keyword" name="userkey" value="台灣 國際"
+                                            <input id="input_keyword" name="userkey" value="台灣 5G"
                                                 class="form-control form-control-success">
                                         </div>
                                     </fieldset>
@@ -95,52 +95,52 @@
                                                 <div class="form-check form-check-inline">
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" type="radio" name="cateradio"
-                                                            value="政治">
-                                                        政治
+                                                            value="5G通訊">
+                                                        5G通訊
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="cateradio"
-                                                        value="科技">
-                                                    <label class="form-check-label" for="gridRadios2">
-                                                        科技
-                                                    </label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="cateradio"
-                                                        value="運動">
+                                                        value="AI與大數據">
                                                     <label class="form-check-label">
-                                                        運動
+                                                        AI與大數據
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="cateradio"
+                                                        value="物聯網">
+                                                    <label class="form-check-label">
+                                                        物聯網
                                                     </label>
                                                 </div>
                                             </div>
                                             <div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="cateradio"
-                                                        value="證卷">
+                                                        value="區塊鏈">
                                                     <label class="form-check-label">
-                                                        證卷
+                                                        區塊鏈
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="cateradio"
-                                                        value="產經">
+                                                        value="半導體與電子產業">
                                                     <label class="form-check-label">
-                                                        產經
+                                                        半導體與電子產業
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="cateradio"
-                                                        value="娛樂">
+                                                        value="資訊安全">
                                                     <label class="form-check-label">
-                                                        娛樂
+                                                        資訊安全
                                                     </label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="cateradio"
-                                                        value="生活">
+                                                        value="雲端運算">
                                                     <label class="form-check-label">
-                                                        生活
+                                                        雲端運算
                                                     </label>
                                                 </div>
                                             </div>
@@ -202,7 +202,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">ABC 受 100 篇新聞報導關注，被提及了 29 次！</h5>
+                            <h5 class="card-title" id="'bar-chart-title">【你關心的關鍵詞】受 X 篇新聞報導關注，被提及了 Y 次！</h5>
                             <canvas id="keyword_time_line_chart" style="max-height: 400px;"></canvas>
                         </div>
                     </div>
@@ -210,7 +210,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">ABC 所在的文章段落</h5>
+                            <h5 class="card-title">【你關心的關鍵詞】 所在的文章段落</h5>
                             <ul id="same_paragraph" class="list-group list-group-flush"></ul>
                         </div>
                     </div>
@@ -218,7 +218,7 @@
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">與 ABC 同時出現的TOP 20 關鍵詞 – 文字云圖</h5>
+                            <h5 class="card-title">與 【你關心的關鍵詞】 同時出現的TOP 20 文字雲圖</h5>
                             <div id="cloud" style="max-height: 400px;"></div>
                         </div>
                     </div>
@@ -226,7 +226,7 @@
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">與 ABC 同時出現的關鍵字</h5>
+                            <h5 class="card-title">與 【你關心的關鍵詞】 同時出現的關鍵字</h5>
                             <ul id="related_words" class="list-group list-group-flush">
                             </ul>
                         </div>
@@ -235,7 +235,7 @@
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">共有 27 篇新聞與 ABC 有關</h5>
+                            <h5 class="card-title">共有 N 篇新聞與 【你關心的關鍵詞】 有關</h5>
                             <ul id="newslinks" class="list-group list-group-flush">
                             </ul>
                         </div>
@@ -244,7 +244,7 @@
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">ABC 被報導之情緒分佈</h5>
+                            <h5 class="card-title">【你關心的關鍵詞】 被報導之情緒分佈</h5>
                             <canvas id="article_senti_pie_chart" style="max-height: 400px; padding: 0px;"></canvas>
                             <div>
                                 <ul id="senti_info" style="list-style-type: none; padding: 15px; margin: 0;"></ul>
@@ -256,13 +256,14 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">ABC 被報導之正負面情緒變化時間軸</h5>
+                            <h5 class="card-title">【你關心的關鍵詞】 被報導之正負面情緒變化時間軸</h5>
                             <canvas id="time_line_chart" style="max-height: 400px;"></canvas>
 
                         </div>
                     </div>
                 </div>
                 </row>
+            </div>
         </section>
     </main>
 
@@ -346,6 +347,8 @@
             success: function (received) {
                 // Extract data from received object
                 const {
+                    kw_freq,
+                    kw_occurrence,
                     key_time_freq: data_key_time_freq,
                     newslinks,
                     related_words,
@@ -355,6 +358,17 @@
                     data_pos,
                     data_neg
                 } = received;
+
+                console.log(received)
+
+                if (received.length == 0) {
+                    $('#cloud').append("<h4>No Data!</h4>");
+                    $('#topkeys').append("<h4>No Data!</h4>");
+                    $('#mychart').append("<h4>No Data!</h4>");
+                    return
+                }
+
+                $("#bar-chart-title").text(`【${userkey}】受 ${kw_occurrence} 篇新聞報導關注，被提及了 ${kw_freq} 次！`);
 
                 // Draw time chart
                 showtimechart(data_key_time_freq);

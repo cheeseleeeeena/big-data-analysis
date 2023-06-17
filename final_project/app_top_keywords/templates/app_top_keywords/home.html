@@ -1,8 +1,8 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -67,7 +67,7 @@
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="cateradio"
                                                     value="AI與大數據">
-                                                <label class="form-check-label" for="gridRadios2">
+                                                <label class="form-check-label">
                                                     AI與大數據
                                                 </label>
                                             </div>
@@ -134,7 +134,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title" id="bar-chart-title">熱門關鍵詞排行</h5>
-                            <canvas id="mychart" style="max-height: 400px;"></canvas>
+                            <canvas id="mychart" style="max-height: 450px;"></canvas>
                         </div>
                     </div>
                 </div>
@@ -157,6 +157,7 @@
                     </div>
                 </div>
                 </row>
+            </div>
         </section>
     </main>
 
@@ -185,6 +186,10 @@
         callAjax();
     }); //
 
+    $("input[name='topk']").on('change', function () {
+        callAjax();
+    }); //
+
     $('#btn-ok').on('click', function () {
         callAjax();
     });
@@ -192,6 +197,7 @@
     function callAjax() {
         const cate = $("input[name='cateradio']:checked").val();
         let topk = $('#topk-selected').val();
+        if (topk < 3) topk = 3;
         if (topk > 20) topk = 20;
         $.ajax({
             type: "POST",
@@ -279,11 +285,11 @@
                 })
                 .transition()
                 .duration(600)
-                .style("font-size", function (d) { return d.size + "px"; })
+
                 .attr("transform", function (d) {
                     return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
                 })
-                .style("fill-opacity", 1)
+                .style("fill-opacity", 0.8)
                 .attr("text-anchor", "middle")
                 .attr("transform", function (d) {
                     return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";

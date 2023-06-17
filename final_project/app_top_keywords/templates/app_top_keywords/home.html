@@ -60,62 +60,70 @@
                                             <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
                                                     <input class="form-check-input" type="radio" name="cateradio"
-                                                        value="政治">
-                                                    政治
+                                                        value="5G通訊">
+                                                    5G通訊
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="cateradio"
-                                                    value="科技">
+                                                    value="AI與大數據">
                                                 <label class="form-check-label" for="gridRadios2">
-                                                    科技
+                                                    AI與大數據
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="cateradio"
-                                                    value="運動">
+                                                    value="物聯網">
                                                 <label class="form-check-label">
-                                                    運動
+                                                    物聯網
                                                 </label>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="cateradio"
-                                                    value="證卷">
+                                                    value="區塊鏈">
                                                 <label class="form-check-label">
-                                                    證卷
+                                                    區塊鏈
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="cateradio"
-                                                    value="產經">
+                                                    value="半導體與電子產業">
                                                 <label class="form-check-label">
-                                                    產經
+                                                    半導體與電子產業
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="cateradio"
-                                                    value="國際">
+                                                    value="資訊安全">
                                                 <label class="form-check-label">
-                                                    國際
+                                                    資訊安全
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="cateradio"
-                                                    value="生活">
+                                                    value="雲端運算">
                                                 <label class="form-check-label">
-                                                    生活
+                                                    雲端運算
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
                                 </fieldset>
                                 <fieldset class="row mb-3 col-md-6">
-                                    <label for="inputText" class="col-lg-12 col-form-label"><b>關鍵詞數量</b></label>
+                                    <label for="topk-selected" class="col-lg-12 col-form-label"><b>關鍵詞數量 (預設為10筆，最多20筆)</b></label>
                                     <div class="col-lg-12" style="padding: 0px 7rem">
                                         <input id="topk-selected" name="topk" value="10"
                                             class="form-control form-control-success">
+
+                                    </div>
+                                </fieldset>
+                                <fieldset class="row mb-3 col-md-12">
+                                    <div class="col-lg-12" style="padding: 0px 7rem">
+                                        <button type="button" id="btn-ok"
+                                                class="form-control form-control-success"
+                                                style="color:#7879BA; background-color: rgba(255, 255, 255, 0.7)">查詢</button>
                                     </div>
                                 </fieldset>
                             </form>
@@ -125,7 +133,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">全部領域 TOP 10 關鍵詞</h5>
+                            <h5 class="card-title" id="bar-chart-title">熱門關鍵詞排行</h5>
                             <canvas id="mychart" style="max-height: 400px;"></canvas>
                         </div>
                     </div>
@@ -133,7 +141,7 @@
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">熱門文字云</h5>
+                            <h5 class="card-title">熱門文字雲圖</h5>
                             <div id="cloud" style="max-height: 400px;"></div>
                         </div>
                     </div>
@@ -184,6 +192,7 @@
     function callAjax() {
         const cate = $("input[name='cateradio']:checked").val();
         let topk = $('#topk-selected').val();
+        if (topk > 20) topk = 20;
         $.ajax({
             type: "POST",
             url: "http://127.0.0.1:8000/topwords/api_get_cate_topword/",
@@ -195,29 +204,35 @@
 
                 $('#topkeys').empty();
                 $('#cloud').empty();
+                $('#mychart').empty();
 
-                console.log(received);
+                //console.log(received.data);
 
-                if (received.length == 0) {
+
+
+                if (received.data.length == 0) {
                     $('#cloud').append("<h4>No Data!</h4>");
                     $('#topkeys').append("<h4>No Data!</h4>");
+                    $('#mychart').append("<h4>No Data!</h4>");
                     return
                 }
 
-                const chart_data = received.chart_data;
+                $("#bar-chart-title").text("【" + cate + "】" + "TOP " + topk + " 熱門關鍵字");
+
+                const chart_data = received.data.data_barchart;
                 showChart(chart_data);
 
-                const wf_pairs = received.wf_pairs;
+                const wf_pairs = received.data.wf_pairs;
                 showTopKeys(wf_pairs);
 
-                topWordToDraw = received.data_cloud;
+                topWordToDraw = received.data.data_cloud;
                 drawCloud(topWordToDraw, '#cloud');
             }
         });
     }
 
     function drawCloud(topWordToDraw, element_id) {
-        console.log(topWordToDraw);
+        //console.log(topWordToDraw);
         const width = 400;
         const height = 400;
 
@@ -286,10 +301,10 @@
             $('#topkeys').append(item_li);
         }
     }
-    let canvas_mychrat = document.getElementById("mychart");
+    let canvas_mychart = document.getElementById("mychart");
 
     function showChart(chart_data) {
-        const ctx = canvas_mychrat.getContext('2d');
+        const ctx = canvas_mychart.getContext('2d');
         const gradient = ctx.createLinearGradient(0, 0, 0, 400);
         gradient.addColorStop(0, 'rgba(120, 121, 186, 1)'); // Start color
         gradient.addColorStop(1, 'rgba(49, 161, 229, 0.2)'); // End color
@@ -312,10 +327,7 @@
 
         let options = {
             legend: {
-                labels: {
-                    fontSize: 18,
-                    fontColor: 'white',
-                },
+                display: false
             },
             scales: {
                 xAxes: [{
@@ -345,7 +357,7 @@
             barchart.destroy();
         }
 
-        barchart = new Chart(canvas_mychrat, {
+        barchart = new Chart(canvas_mychart, {
             type: 'bar',
             data: data,
             options: options,

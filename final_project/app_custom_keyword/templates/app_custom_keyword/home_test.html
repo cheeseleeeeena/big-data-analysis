@@ -309,10 +309,11 @@
 
     call_ajax();
 
-    $('#btn_ok').on('click', function () {
+    $('#btn-ok').on('click', function () {
         call_ajax();
     });
 
+    /*
     $("input[name='cateradio']").on('change', function () {
         call_ajax();
     });
@@ -324,6 +325,8 @@
     $("input[name='condradio']").on('change', function () {
         call_ajax();
     });
+
+     */
 
     // Draw the sentiment line chart here!
     let linechartElem = document
@@ -549,7 +552,7 @@
     function paginate_newslinks() {
         // 把顯示在#newslinks的條列式的文字 整理成逐頁顯示
         $("#newslinks").paginathing({
-            perPage: 10, // show item per page
+            perPage: 5, // show item per page
             insertAfter: "#newslinks", //class or id (eg: .element or #element). append the paginator after certain element
 
             limitPagination: 4, // false or number. Limiting your pagination number.

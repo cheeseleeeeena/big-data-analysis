@@ -79,4 +79,4 @@ def get_category_topCorps(cate, topk):
     return response_data
 
 
-print("app_top_corps--熱門科技公司載入成功!")
+print("app_top_corps--熱門科技公司分析--載入成功!")

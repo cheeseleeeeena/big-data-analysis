@@ -76,4 +76,4 @@ def get_category_topword(cate, topk=10):
     return response_data
 
 
-print("app_top_keywords--熱門關鍵字載入成功!")
+print("app_top_keywords--熱門關鍵詞分析--載入成功!")

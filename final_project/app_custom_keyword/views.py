@@ -324,4 +324,4 @@ def filter_df_via_content(query_keywords, cond, cate, weeks):
     return df_query
 """
 
-print("app_custom_keyword was loaded!")
+print("app_custom_keyword--自訂關鍵詞分析--載入成功!")

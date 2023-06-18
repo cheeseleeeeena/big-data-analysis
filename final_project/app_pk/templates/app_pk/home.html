@@ -1,8 +1,9 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -47,22 +48,22 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">熱門關鍵字瀏覽與繪圖</h5>
+                            <h5 class="card-title">3C聲量大PK</h5>
                             <form style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
                                 <fieldset class="row mb-3 col-md-6">
                                     <legend class="col-form-label col-lg-12 pt-0"><b>你想關注？</b></legend>
                                     <div class="col-lg-12">
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="nerradio" value="9"
+                                                <input class="form-check-input" type="radio" name="nerradio" value="產品"
                                                     checked>
                                                 產品
                                             </label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="nerradio" value="7">
-                                                組織
+                                                <input class="form-check-input" type="radio" name="nerradio" value="公司">
+                                                公司
                                             </label>
                                         </div>
                                     </div>
@@ -83,13 +84,6 @@
                                                 5
                                             </label>
                                         </div>
-                                        <div class="form-check form-check-inline">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="topkradio"
-                                                    value="10">
-                                                10
-                                            </label>
-                                        </div>
                                     </div>
                                 </fieldset>
                             </form>
@@ -100,7 +94,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">3C產業 TOP 3 產品</h5>
+                            <h5 class="card-title" id="bar-chart-title">【TOP 3】 3C產品</h5>
                             <canvas id="pkBarChart" style="max-height: 400px;"></canvas>
                         </div>
                     </div>
@@ -108,7 +102,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">3C產業 TOP 3 產品 網路聲量分析</h5>
+                            <h5 class="card-title" id="dashboard-title">【TOP 3】 3C產品 - 網路聲量分析</h5>
                             <div id="leaderboardDisplay"></div>
                         </div>
                     </div>
@@ -116,7 +110,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">3C產業 TOP 3 產品 年度聲量走勢</h5>
+                            <h5 class="card-title" id="line-chart-title">【TOP 3】 3C產品 - 年度聲量走勢</h5>
                             <canvas id="pkLineChart" style="max-height: 400px;"></canvas>
                         </div>
                     </div>
@@ -182,34 +176,74 @@
     // Call the AJAX function
     call_ajax();
 
+    $("input[name='nerradio']").on('change', function () {
+        call_ajax();
+    }); //
+
+    $("input[name='topkradio']").on('change', function () {
+        call_ajax();
+    }); //
+
+
+
     function call_ajax() {
+        const cate = $("input[name='nerradio']:checked").val();
+        let topk = $("input[name='topkradio']:checked").val();
+
         $.ajax({
             type: "POST",
             url: "api_get_pk_data/",
-            data: {},
+            data: {
+                "cate": cate,
+                "topk": topk
+            },
             success: function (received) {
+
+                console.log(received)
                 // Process the received data
-                const list_freq_daily_line_chart = received["list_freq_daily_line_chart"];
                 const list_pkNames = received["list_pkNames"];
-                const list_photos = received["list_photos"];
-                const list_freq_news_category = received["list_freq_news_category"];
-                const list_categories = received["list_category"];
-                const list_sentiInfo = received["list_sentiInfo"];
-                const list_total_articles = received["list_total_articles"];
                 const list_total_frequency = received["list_total_frequency"];
-                const list_colors = received["list_colors"];
+                const list_total_articles = received["list_total_articles"];
+                const list_sentiment_pie_chart = received["list_sentiment_pie_chart"];
+                const list_sentiInfo = received["list_sentiInfo"];
+                const list_freq_daily_line_chart = received["list_freq_daily_line_chart"];
+                //const list_colors = received["list_colors"];
+                const list_colors = ['rgba(255, 255, 255,0.8)' , 'rgba(49, 161, 229,0.8)', 'rgba(120, 121, 186,0.8)','rgba(203, 209, 38,0.8)','rgba(43, 110, 39,0.8)']
+
+                $('#pkBarChart').empty();
+                $('#pkLineChart').empty();
+                $('#leaderboardDisplay').empty();
+
+                if (received.length == 0) {
+                    $('#pkLineChart').append("<h4>No Data!</h4>");
+                    $('#leaderboardDisplay').append("<h4>No Data!</h4>");
+                    $('#pkBarChart').append("<h4>No Data!</h4>");
+                    return
+                }
+
+                $("#bar-chart-title").text(`【TOP ${topk}】 3C${cate}`);
+                $("#dashboard-title").text(`【TOP ${topk}】 3C${cate} - 網路聲量分析`);
+                $("#line-chart-title").text(`【TOP ${topk}】 3C${cate} - 年度聲量走勢`);
+
+                const chart_data = {
+                    "category": cate,
+                    "labels": list_pkNames,
+                    "values": list_total_frequency
+                }
+                showChart(chart_data);
+
 
                 // Display the leaderboard
                 displayLeaderboard(
                     list_pkNames,
-                    list_sentiInfo,
-                    list_photos,
-                    list_sentiInfo,
-                    list_freq_news_category,
                     list_total_articles,
-                    list_total_frequency
+                    list_total_frequency,
+                    list_sentiInfo,
+                    list_sentiment_pie_chart,
                 );
 
+
+                /*
                 // Draw the bar chart
                 drawBarChart(
                     list_pkNames,
@@ -218,8 +252,13 @@
                     list_categories
                 );
 
+                 */
+
+
                 // Draw the line chart
                 drawLineChart(list_pkNames, list_freq_daily_line_chart, list_colors);
+
+
             },
         });
     }
@@ -227,15 +266,14 @@
 
     function displayLeaderboard(
         list_pkNames,
-        list_sentiInfo,
-        list_photos,
-        list_freq_news_category,
         list_total_articles,
-        list_total_frequency
+        list_total_frequency,
+        list_sentiInfo,
+        list_sentiment_pie_chart,
     ) {
 
         // Define colors for sentiment values
-        const textColor = ["text-danger", "text-secondary", "text-primary"]; //red, grey, light blue
+        const textColor = ['text-danger', 'text-secondary', 'text-info']; //red, grey, light blue
 
         // Create new div to hold leaderboard
         const new_div = document.createElement("div");
@@ -243,21 +281,23 @@
         // Loop through player data and create HTML snippets for each
         for (let i = 0; i < list_pkNames.length; i++) {
             let html_snippet = `<div class="row">
-                          <div class="col-md-3">
-                            <canvas id="article_senti_pie_chart" style="max-height: 200px;"></canvas>
+                          <div id="pie-chart" class="col-md-5" style="display: inline-block;position: relative;  width: 100%;">
+                            <canvas id="article_senti_pie_chart" name="pie"></canvas>
                           </div>
-                          <div class="col-md-8 board-info">
-                              <h3>{1}</h3>
-                              <p>在{2}篇新聞中,被提及{3}次</p>
-                              <p>正面報導59%，負面報導11%，中立報導30%</p>
+                          <div class="col-md-5 board-info">
+                              <h3>{0}</h3>
+                              <p>在{1}篇新聞中,被提及{2}次</p>
+                              <p>{3}</p>
                           </div>
                       </div>
                       <hr>`;
 
             // Create sentiment string with color coding
+            let senti_cate = ['正面報導: ','中立報導: ','負面報導: ']
             let senti_str = ""; //sentiment string
             for (let j = 0; j <= 2; j++) {
-                senti_str += "<span class={0}>{1}%</span>".format(
+                senti_str += "{0}<span class={1}>{2}%  </span>".format(
+                    senti_cate[j],
                     textColor[j],
                     list_sentiInfo[i][j]
                 );
@@ -265,20 +305,81 @@
 
             // Fill in data for HTML snippet
             html_snippet = html_snippet.format(
-                list_photos[i],
                 list_pkNames[i],
                 list_total_articles[i],
                 list_total_frequency[i],
                 senti_str   //sentiment percentage
             );
 
+
+
             // Add HTML snippet to new div
             new_div.innerHTML += html_snippet;
+
+
+
         }
 
         // Append new div to leaderboard display
         document.getElementById("leaderboardDisplay").appendChild(new_div);
+
+        for (let k = 1; k <= list_pkNames.length; k++) {
+            (document.getElementsByTagName("canvas")[k]).setAttribute("name", "pie" + k.toString());
+            }
+
+        let piechartElem1 = document
+            .getElementsByName("pie1")[0]
+            .getContext("2d");
+
+        const data_pie1 = list_sentiment_pie_chart[0];
+
+        if (window.piechart1) piechart1.destroy();
+        piechart1 = drawPieChart(piechartElem1, data_pie1);
+
+
+        let piechartElem2 = document
+            .getElementsByName("pie2")[0]
+            .getContext("2d");
+
+        const data_pie2 = list_sentiment_pie_chart[1];
+
+        if (window.piechart2) piechart2.destroy();
+        piechart2 = drawPieChart(piechartElem2, data_pie2);
+
+
+        let piechartElem3 = document
+            .getElementsByName("pie3")[0]
+            .getContext("2d");
+
+        const data_pie3 = list_sentiment_pie_chart[2];
+
+        if (window.piechart3) piechart3.destroy();
+        piechart3 = drawPieChart(piechartElem3, data_pie3);
+
+        if (list_pkNames.length == 5) {
+            let piechartElem4 = document
+                .getElementsByName("pie4")[0]
+                .getContext("2d");
+
+            const data_pie4 = list_sentiment_pie_chart[3];
+
+            if (window.piechart4) piechart4.destroy();
+            piechart4 = drawPieChart(piechartElem4, data_pie4);
+
+
+            let piechartElem5 = document
+                .getElementsByName("pie5")[0]
+            .getContext("2d");
+
+            const data_pie5 = list_sentiment_pie_chart[4];
+
+            if (window.piechart5) piechart5.destroy();
+            piechart5 = drawPieChart(piechartElem5, data_pie5);
+        }
+
     }
+
+
 
     Chart.defaults.global.defaultFontSize = 18; //chart.js內定字型大小，可以自行調整
 
@@ -352,12 +453,12 @@
             .getContext("2d");
 
         let pkDataToDraw = new Array();
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < list_pkNames.length; i++) {
             pkDataToDraw.push({
                 label: list_pkNames[i], //圖標題名稱
                 borderColor: list_colors[i], //線條顏色
-                borderWidth: 1,
-                backgroundColor: list_colors[i], //背景底色
+                borderWidth: 2,
+                backgroundColor: "rgba(255, 255, 255, 0.1)", //背景底色
                 data: list_freq_daily_line_chart[i], //x y資料置放於data
             });
         }
@@ -379,9 +480,9 @@
                         },
                         type: "time",
                         time: {
-                            unit: "day",
+                            unit: "month",
                             displayFormats: {
-                                day: "MM/DD",
+                                day: "YYYY/MM",
                             },
                         },
                         gridLines: {
@@ -398,9 +499,9 @@
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: "篇數",
+                            labelString: "報導篇數",
                             fontColor: "white",
-                            fontColor: "rgba(120, 121, 186)",
+                            //fontColor: "rgb(120, 121, 186)",
                         },
                         gridLines: {
                             color: "rgba(255, 255, 255, 0.3)",
@@ -409,6 +510,7 @@
                     },
                 ],
             },
+            maintainAspectRatio: false
         };
 
         //定義繪圖規格
@@ -423,6 +525,8 @@
         new Chart(lineChartElem, chartSpec);
         //return new Chart(lineChartElem, chartSpec);
     }
+
+
 
     function randomColors(length) {
         var pool = [];
@@ -440,4 +544,105 @@
         var b = Math.floor(Math.random() * 255);
         return "rgba(" + r + "," + g + "," + b + ", 0.2)";
     }
+
+    let canvas_mychart = document.getElementById("pkBarChart");
+
+    function showChart(chart_data) {
+        const ctx = canvas_mychart.getContext('2d');
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(120, 121, 186, 1)'); // Start color
+        gradient.addColorStop(1, 'rgba(49, 161, 229, 0.2)'); // End color
+
+        let values = chart_data.values;
+        let labels = chart_data.labels;
+        let category = chart_data.category;
+
+        let data = {
+            labels: labels,
+            datasets: [{
+                label: category,
+                data: values,
+                backgroundColor: gradient,
+                borderColor: gradient,
+                hoverBackgroundColor: 'rgba(49, 161, 229, 0.5)',
+                borderWidth: 2,
+            }],
+        };
+
+        let options = {
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: "white",
+                        fontSize: 18,
+                    },
+                    gridLines: {
+                        color: "rgba(255, 255, 255, 0.3)",
+                    },
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: "white",
+                        fontSize: 18,
+                    },
+                    gridLines: {
+                        color: "rgba(255, 255, 255, 0.3)",
+                    },
+                }],
+            },
+            maintainAspectRatio: false
+        };
+
+        if (window.barchart) {
+            barchart.destroy();
+        }
+
+        barchart = new Chart(canvas_mychart, {
+            type: 'bar',
+            data: data,
+            options: options,
+        });
+
+    }
+
+    function drawPieChart(chartElem, chartdata) {
+        const chartSpec = {
+            type: 'pie',
+            data: {
+                labels: ['正面', '中立', '負面'],
+                datasets: [{
+                    data: [
+                        chartdata[0],
+                        chartdata[1],
+                        chartdata[2],
+                    ],
+                    backgroundColor: [
+                        'rgba(49, 161, 229,0.3)',
+                        'rgba(255,255,255,0.3)',
+                        'rgba(120, 121, 186,0.5)',
+                    ],
+                }],
+            },
+            options: {
+                legend: {
+                    labels: {
+                        fontSize: 16,
+                        fontColor: 'white',
+                    },
+                    "position": "bottom",
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+            },
+
+        };
+        return new Chart(chartElem, chartSpec);
+    }
+
+
 </script>

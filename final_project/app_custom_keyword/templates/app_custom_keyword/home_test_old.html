@@ -196,9 +196,10 @@
 
                             </div>
                             <fieldset class="row mb-3 col-md-12">
-                                <div class="col-lg-12" style="padding: 15px 10rem">
+                                <div class="col-lg-12" style="padding: 0px 7rem">
                                     <button type="button" id="btn-ok"
-                                            class="form-control form-control-success">查詢
+                                            class="form-control form-control-success"
+                                            style="color:#7879BA; background-color: rgba(255, 255, 255, 0.7)">查詢
                                     </button>
                                 </div>
                             </fieldset>
@@ -505,7 +506,6 @@
                     borderColor: "rgba(120, 121, 186,0.5)",
                     backgroundColor: gradient,
                     data,
-                    borderWidth: 3,
                 }]
             },
             options: {
@@ -563,7 +563,7 @@
             nextText: "&raquo;", // Next button text
             firstText: "First", // "First button" text
             lastText: "Last", // "Last button" text
-            containerClass: "pagination-container-newslinks d-flex flex-wrap justify-content-center", //這是頁碼元件的class名稱 清除時會用到 extend default container class
+            containerClass: "pagination-container-newslinks", //這是頁碼元件的class名稱 清除時會用到 extend default container class
             ulClass: "pagination", // extend default ul class
             liClass: "page", // extend li class
             activeClass: "active", // active link class

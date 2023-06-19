@@ -280,14 +280,14 @@
 
         // Loop through player data and create HTML snippets for each
         for (let i = 0; i < list_pkNames.length; i++) {
-            let html_snippet = `<div class="row">
-                          <div id="pie-chart" class="col-md-5" style="display: inline-block;position: relative;  width: 100%;">
+            let html_snippet = `<div class="row" style="padding: 20px 0px">
+                          <div id="pie-chart" class="col-md-6" style="display: inline-block;position: relative;">
                             <canvas id="article_senti_pie_chart" name="pie"></canvas>
                           </div>
-                          <div class="col-md-5 board-info">
+                          <div class="col-md-5 board-info" style="display: flex; flex-direction: column; justify-content: center;border-left: solid 2px rgba(255, 255, 255, 0.7); padding-left: 30px">
                               <h3>{0}</h3>
                               <p>在{1}篇新聞中,被提及{2}次</p>
-                              <p>{3}</p>
+                              <p style="margin: 0px">{3}</p>
                           </div>
                       </div>
                       <hr>`;
